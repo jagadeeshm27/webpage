@@ -3,219 +3,355 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jagadeesh's Personal Website</title>
+<title>Jagadeesh Muthamsetty - Portfolio</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0; 
-    padding: 0;
-    background: #f5f5f5;
-    color: #333;
+  /* Reset & basics */
+  * {
+    box-sizing: border-box;
   }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f7f7f7;
+    color: #222;
+    scroll-behavior: smooth;
+  }
+  a {
+    text-decoration: none;
+    color: #ff9900;
+  }
+  a:hover {
+    color: #cc7a00;
+  }
+
+  /* Header */
   header {
+    position: fixed;
+    width: 100%;
     background: #232f3e;
     color: white;
     padding: 1rem 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
   }
   header h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1.5rem;
+    margin-left: 2rem;
     font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #ff9900;
+    font-size: 1rem;
   }
 
-  .main-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 2rem auto;
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 100px auto 50px; /* 100px for fixed header spacing */
     padding: 0 1rem;
   }
 
-  .left-column {
+  /* Hero */
+  .hero {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
   }
-
-  /* Make cards clickable */
-  .card-link {
-    text-decoration: none;
-    color: inherit;
+  .hero img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   }
-
-  .card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: box-shadow 0.3s ease;
-    text-align: center;
-    cursor: pointer;
+  .hero-text {
+    flex: 1;
+    min-width: 220px;
   }
-  .card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  .card img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-  }
-  h2 {
-    margin-top: 0;
+  .hero-text h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
     color: #232f3e;
   }
-  p {
+  .hero-text p {
+    font-size: 1.1rem;
     line-height: 1.5;
   }
 
-  .right-column {
-    background-color: #fff4e6;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    position: relative;
-    overflow: hidden;
+  /* Sections */
+  section {
+    margin-bottom: 3rem;
+  }
+  section h2 {
+    font-size: 1.8rem;
+    border-bottom: 3px solid #ff9900;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #232f3e;
   }
 
-  .creative-card {
+  /* Summary */
+  #summary p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /* Projects */
+  .projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
     background: white;
+    padding: 1rem 1.5rem;
     border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-    cursor: pointer;
-    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-
-  .creative-card img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 0.75rem;
-    border-radius: 8px;
+  .project-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
   }
-
-  /* Hidden preview text initially */
-  .preview {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(35, 47, 62, 0.95);
+  .project-card h3 {
+    margin-top: 0;
+    color: #232f3e;
+  }
+  .project-card p {
+    flex-grow: 1;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .btn-details {
+    align-self: flex-start;
+    background-color: #ff9900;
     color: white;
-    padding: 1rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
+  }
+  .btn-details:hover {
+    background-color: #cc7a00;
+  }
+
+  /* Skills */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .skill {
+    background: #232f3e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Contact */
+  #contact p {
+    font-size: 1.1rem;
+  }
+  #contact a {
+    color: #232f3e;
+    font-weight: 600;
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modal-content {
+    background: white;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    position: relative;
+    max-height: 80vh;
     overflow-y: auto;
-    border-radius: 8px;
-    pointer-events: none; /* so clicks pass through when hidden */
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .modal-close:hover {
+    color: #333;
+  }
+  .modal h3 {
+    margin-top: 0;
   }
 
-  /* Show preview on hover */
-  .creative-card:hover .preview {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .main-content {
-      grid-template-columns: 1fr;
+  @media (max-width: 600px) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    .right-column {
-      margin-top: 2rem;
+    .hero-text {
+      min-width: 100%;
     }
   }
 </style>
 </head>
 <body>
-  <header>
-    <h1>Jagadeesh</h1>
-    <nav>
-      <a href="#personal">Personal Info</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Creative Experience</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <div class="main-content">
-    <div class="left-column">
-      <a href="personal.html" class="card-link">
-        <div class="card" id="personal">
-          <img src="personal.png" alt="Personal Details" />
-          <h2>Personal Details</h2>
-          <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
-        </div>
-      </a>
+<header>
+  <h1>Jagadeesh Muthamsetty</h1>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-      <a href="skills.html" class="card-link">
-        <div class="card" id="skills">
-          <img src="skills.png" alt="Skills" />
-          <h2>Skills</h2>
-          <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
-        </div>
-      </a>
+<main>
 
-      <a href="projects.html" class="card-link">
-        <div class="card" id="projects">
-          <img src="projects.png" alt="Projects" />
-          <h2>Projects</h2>
-          <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
-        </div>
-      </a>
-
-      <a href="hobbies.html" class="card-link">
-        <div class="card" id="hobbies">
-          <img src="hobbies.png" alt="Hobbies" />
-          <h2>Hobbies</h2>
-          <p>Travelling, Foodie</p>
-        </div>
-      </a>
-
-      <a href="contact.html" class="card-link">
-        <div class="card" id="contact">
-          <img src="contact.png" alt="Contact" />
-          <h2>Contact</h2>
-          <p>Email: jagadeeshmuthamsetty@gmail.com<br/>Phone: +44 07585685622</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="right-column">
-      <div class="creative-card" onclick="location.href='creative.html'">
-        <img src="experience.png" alt="Creative Experience" />
-        <h2>Creative Experience</h2>
-        <p>Freelance editor for YouTubers and creators.</p>
-
-        <div class="preview">
-          <h3>Sample Works:</h3>
-          <ul style="text-align:left;">
-            <li>Phanumantu YouTube channel editing</li>
-            <li>RJ Abhinav Instagram content editing</li>
-            <li>Motion graphics and video optimization</li>
-          </ul>
-          <p style="margin-top:1rem;">Click to see full portfolio.</p>
-        </div>
-      </div>
+  <div class="hero" id="hero">
+    <img src="personal.png" alt="Jagadeesh Muthamsetty" />
+    <div class="hero-text">
+      <h2>Hello! I'm Jagadeesh</h2>
+      <p>Front-end Developer | Digital Marketer | Content Creator</p>
     </div>
   </div>
+
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>Proactive and self-motivated front-end web developer with a strong foundation in digital marketing and a proven track record of scaling a digital product from inception to over 250,000+ users. Demonstrated expertise in UI/UX design, conversion-focused development, and marketing strategy execution. Seeking to contribute technical and strategic skills to a dynamic e-commerce team in the UK.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-list">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio website showcasing my skills and projects.</p>
+        <button class="btn-details" data-project="portfolio">Details</button>
+      </div>
+      <div class="project-card">
+        <h3>Chatbot</h3>
+        <p>Interactive chatbot application using AI and NLP technologies.</p>
+        <button class="btn-details" data-project="chatbot">Details</button>
+      </div>
+      <div class="project-card">
+        <h3>E-commerce App</h3>
+        <p>Full-stack e-commerce app with user authentication and payment integration.</p>
+        <button class="btn-details" data-project="ecommerce">Details</button>
+      </div>
+      <div class="project-card">
+        <h3>Blog Platform</h3>
+        <p>Custom blog platform with CMS and SEO optimization.</p>
+        <button class="btn-details" data-project="blog">Details</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">React</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">Git</div>
+      <div class="skill">Docker</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:jagadeeshmuthamsetty@gmail.com">jagadeeshmuthamsetty@gmail.com</a></p>
+    <p>Phone: <a href="tel:+447585685622">+44 7585 685622</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank" rel="noopener">Jagadeesh Muthamsetty</a></p>
+  </section>
+
+</main>
+
+<!-- Modal -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <h3 id="modalTitle">Project Title</h3>
+    <p id="modalDescription">Project details will appear here...</p>
+  </div>
+</div>
+
+<script>
+  // Modal logic
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalClose = document.getElementById('modalClose');
+
+  // Project details data
+  const projectsDetails = {
+    portfolio: {
+      title: 'Portfolio Website',
+      description: 'A responsive portfolio website built with HTML, CSS, and JavaScript showcasing my skills, projects, and contact information.'
+    },
+    chatbot: {
+      title: 'Chatbot',
+      description: 'An interactive chatbot application using AI and natural language processing to assist users with inquiries and automate tasks.'
+    },
+    ecommerce: {
+      title: 'E-commerce App',
+      description: 'A full-stack e-commerce application featuring user authentication, product catalog, shopping cart, and secure payment integration.'
+    },
+    blog: {
+      title: 'Blog Platform',
+      description: 'A custom blog platform with content management system (CMS), SEO optimization, and responsive design.'
+    }
+  };
+
+  document.querySelectorAll('.btn-details').forEach(button => {
+    button.addEventListener('click', () => {
+      const projectKey = button.getAttribute('data-project');
+      if (projectsDetails[projectKey]) {
+        modalTitle.textContent = projectsDetails[projectKey].title;
+        modalDescription.textContent = projectsDetails[projectKey].description;
+        modal.style.display = 'flex';
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
