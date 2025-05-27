@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Personal Info - Jagadeesh Muthamsetty</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 2rem auto;
-      background: #f5f5f5;
-      padding: 2rem;
-      border-radius: 8px;
-      color: #333;
-    }
-    h1 {
-      color: #232f3e;
-      margin-bottom: 1rem;
-    }
-    p, ul {
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    a {
-      color: #ff9900;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    nav a {
-      display: inline-block;
-      margin-bottom: 2rem;
-      color: #232f3e;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover {
-      color: #ff9900;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jagadeesh - Personal Details</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 2rem;
+    background: #f8f9fa;
+    color: #222;
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+    color: #232f3e;
+  }
+  .scrolling-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .scrolling-gallery img {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .scrolling-gallery img:hover {
+    transform: scale(1.05);
+  }
+  /* Hide scrollbar for webkit */
+  .scrolling-gallery::-webkit-scrollbar {
+    height: 8px;
+  }
+  .scrolling-gallery::-webkit-scrollbar-thumb {
+    background: #232f3e;
+    border-radius: 4px;
+  }
+  .scrolling-gallery::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+</style>
 </head>
 <body>
-  <nav><a href="index.html">&larr; Back to Home</a></nav>
-  <h1>Jagadeesh Muthamsetty</h1>
-  <p><strong>Email:</strong> <a href="mailto:jagadeeshmuthamsetty@gmail.com">jagadeeshmuthamsetty@gmail.com</a></p>
-  <p><strong>Mobile:</strong> +44 7585 685622</p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank" rel="noopener">linkedin.com/in/jagadeesh-muthamsetty-9a36b929b</a></p>
-  <p><strong>Address:</strong> Liverpool, UK</p>
 
-  <h2>Summary</h2>
-  <p>Proactive and self-motivated front-end web developer with a strong foundation in digital marketing and a proven track record of scaling a digital product from inception to over 250,000+ users. Demonstrated expertise in UI/UX design, conversion-focused development, and marketing strategy execution. Seeking to contribute technical and strategic skills to a dynamic e-commerce team in the UK.</p>
+<h1>Personal Details Gallery</h1>
 
-  <h2>Languages</h2>
-  <ul>
-    <li>English (Fluent)</li>
-    <li>Hindi</li>
-    <li>Telugu</li>
-    <li>Tamil</li>
-    <li>Kannada</li>
-  </ul>
+<div class="scrolling-gallery">
+  <img src="personal1.jpg" alt="Personal Image 1" />
+  <img src="personal2.jpg" alt="Personal Image 2" />
+  <img src="personal3.jpg" alt="Personal Image 3" />
+  <img src="personal4.jpg" alt="Personal Image 4" />
+  <img src="personal5.jpg" alt="Personal Image 5" />
+</div>
+
 </body>
 </html>
