@@ -107,7 +107,7 @@
   .creative-card img {
     width: 70px;
     height: 70px;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: 0.75rem;
     border-radius: 8px;
   }
@@ -124,54 +124,12 @@
     overflow-y: auto;
     border-radius: 8px;
     pointer-events: none; /* so clicks pass through when hidden */
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
   }
 
   /* Show preview on hover */
   .creative-card:hover .preview {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .profile-block {
-    flex: 1 1 150px;
-    background: #2a3a55;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .profile-block img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-  }
-
-  .profile-block h4 {
-    margin: 0.3rem 0 0.1rem;
-    font-size: 1.1rem;
-  }
-
-  .profile-block p {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin: 0;
-  }
-
-  .description-block {
-    flex: 2 1 300px;
-    padding: 0 1rem;
-    text-align: left;
-  }
-
-  .description-block h3 {
-    margin-top: 0;
   }
 
   /* Responsive */
@@ -181,13 +139,6 @@
     }
     .right-column {
       margin-top: 2rem;
-    }
-    .preview {
-      flex-direction: column;
-      align-items: center;
-    }
-    .description-block {
-      padding: 1rem 0 0 0;
     }
   }
 </style>
@@ -255,25 +206,13 @@
         <p>Freelance editor for YouTubers and creators.</p>
 
         <div class="preview">
-          <div class="profile-block">
-            <img src="phanumantu.jpg" alt="Phanumantu" />
-            <h4>Phanumantu</h4>
-            <p>YouTube Channel</p>
-          </div>
-          <div class="profile-block">
-            <img src="rjabhinav.jpg" alt="RJ Abhinav" />
-            <h4>RJ Abhinav</h4>
-            <p>Instagram Creator</p>
-          </div>
-          <div class="description-block">
-            <h3>What I Did:</h3>
-            <ul>
-              <li>Video editing for YouTube content</li>
-              <li>Content optimization for Instagram</li>
-              <li>Motion graphics and backend support</li>
-            </ul>
-            <p style="margin-top:1rem;">Click to see full portfolio.</p>
-          </div>
+          <h3>Sample Works:</h3>
+          <ul style="text-align:left;">
+            <li>Phanumantu YouTube channel editing</li>
+            <li>RJ Abhinav Instagram content editing</li>
+            <li>Motion graphics and video optimization</li>
+          </ul>
+          <p style="margin-top:1rem;">Click to see full portfolio.</p>
         </div>
       </div>
     </div>
