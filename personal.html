@@ -1,63 +1,100 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jagadeesh - Personal Details</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 2rem;
-    background: #f8f9fa;
-    color: #222;
-  }
-  h1 {
-    margin-bottom: 1.5rem;
-    color: #232f3e;
-  }
-  .scrolling-gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-  }
-  .scrolling-gallery img {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-  .scrolling-gallery img:hover {
-    transform: scale(1.05);
-  }
-  /* Hide scrollbar for webkit */
-  .scrolling-gallery::-webkit-scrollbar {
-    height: 8px;
-  }
-  .scrolling-gallery::-webkit-scrollbar-thumb {
-    background: #232f3e;
-    border-radius: 4px;
-  }
-  .scrolling-gallery::-webkit-scrollbar-track {
-    background: #e0e0e0;
-    border-radius: 4px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jagadeesh's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>Jagadeesh</h1>
+    <nav>
+      <a href="personal.html">Personal Details</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#creative">Creative Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<h1>Personal Details Gallery</h1>
+  <main>
+    <section class="grid">
+      <a class="card" href="personal.html">
+        <h2>Personal Details</h2>
+        <p>Click to explore my personal journey and gallery.</p>
+      </a>
 
-<div class="scrolling-gallery">
-  <img src="personal1.jpg" alt="Personal Image 1" />
-  <img src="personal2.jpg" alt="Personal Image 2" />
-  <img src="personal3.jpg" alt="Personal Image 3" />
-  <img src="personal4.jpg" alt="Personal Image 4" />
-  <img src="personal5.jpg" alt="Personal Image 5" />
-</div>
+      <div class="card" id="skills">
+        <h2>Skills</h2>
+        <p>HTML, CSS, JavaScript, UI/UX, SEO, Digital Marketing</p>
+      </div>
 
+      <div class="card" id="projects">
+        <h2>Projects</h2>
+        <p>Portfolio Website, E-commerce App, Blog Platform</p>
+      </div>
+
+      <div class="card" id="creative">
+        <h2>Creative Experience</h2>
+        <p>Freelance work for Phanumantu & RJ Abhinav</p>
+      </div>
+
+      <div class="card" id="contact">
+        <h2>Contact</h2>
+        <p>Email: jagadeeshmuthamsetty@gmail.com<br>Phone: +44 07585685622</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+<!-- personal.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 20px 0;
+    }
+    .horizontal-scroll img {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .horizontal-scroll img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Personal Life & Memories</h1>
+  <div class="horizontal-scroll">
+    <img src="personal1.jpg" alt="Personal photo 1">
+    <img src="personal2.jpg" alt="Personal photo 2">
+    <img src="personal3.jpg" alt="Personal photo 3">
+    <img src="personal4.jpg" alt="Personal photo 4">
+  </div>
 </body>
 </html>
