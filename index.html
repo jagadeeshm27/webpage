@@ -3,217 +3,215 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jagadeesh Muthamsetty - Portfolio</title>
+<title>Jagadeesh Muthamsetty | Portfolio</title>
 <style>
-  /* Reset & basics */
+  /* Reset & base */
   * {
     box-sizing: border-box;
   }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0; padding: 0;
-    background: #f7f7f7;
+    background: #f9f9f9;
     color: #222;
     scroll-behavior: smooth;
   }
   a {
     text-decoration: none;
-    color: #ff9900;
+    color: inherit;
   }
-  a:hover {
-    color: #cc7a00;
+  img {
+    max-width: 100%;
+    display: block;
   }
 
   /* Header */
   header {
     position: fixed;
-    width: 100%;
-    background: #232f3e;
-    color: white;
-    padding: 1rem 2rem;
+    top: 0; left: 0; right: 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    padding: 0 2rem;
+    height: 60px;
   }
   header h1 {
-    margin: 0;
-    font-size: 1.8rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ff6600;
+    cursor: default;
   }
   nav a {
     margin-left: 2rem;
     font-weight: 600;
     font-size: 1rem;
+    color: #444;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a.active {
+    color: #ff6600;
   }
 
-  /* Main container */
+  /* Container for sections */
   main {
+    padding-top: 80px;
     max-width: 900px;
-    margin: 100px auto 50px; /* 100px for fixed header spacing */
-    padding: 0 1rem;
+    margin: 0 auto 4rem auto;
   }
 
-  /* Hero */
-  .hero {
+  section {
+    margin-bottom: 5rem;
+  }
+
+  /* About Section */
+  #about {
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
   }
-  .hero img {
-    width: 160px;
-    height: 160px;
+  #about img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(255,102,0,0.3);
   }
-  .hero-text {
+  #about .info {
     flex: 1;
-    min-width: 220px;
   }
-  .hero-text h2 {
+  #about .info h2 {
     margin: 0 0 0.5rem 0;
     font-size: 2rem;
-    color: #232f3e;
+    color: #ff6600;
   }
-  .hero-text p {
+  #about .info p {
     font-size: 1.1rem;
     line-height: 1.5;
+    color: #555;
   }
 
-  /* Sections */
-  section {
-    margin-bottom: 3rem;
-  }
-  section h2 {
+  /* Section Titles */
+  h2.section-title {
     font-size: 1.8rem;
-    border-bottom: 3px solid #ff9900;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: #232f3e;
+    border-left: 5px solid #ff6600;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    color: #333;
   }
 
   /* Summary */
   #summary p {
     font-size: 1.1rem;
     line-height: 1.6;
+    color: #444;
   }
 
-  /* Projects */
-  .projects-list {
+  /* Projects Section */
+  #projects .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
-  .project-card {
-    background: white;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-    transition: box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .project-card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-  }
-  .project-card h3 {
-    margin-top: 0;
-    color: #232f3e;
-  }
-  .project-card p {
-    flex-grow: 1;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  .btn-details {
-    align-self: flex-start;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.25s ease;
-  }
-  .btn-details:hover {
-    background-color: #cc7a00;
-  }
-
-  /* Skills */
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .skill {
-    background: #232f3e;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  /* Contact */
-  #contact p {
-    font-size: 1.1rem;
-  }
-  #contact a {
-    color: #232f3e;
-    font-weight: 600;
-  }
-
-  /* Modal styles */
-  .modal {
-    display: none; /* hidden by default */
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  .modal-content {
+  #projects .project {
     background: white;
     border-radius: 10px;
-    max-width: 600px;
-    width: 90%;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    position: relative;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-  .modal-close {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
   }
-  .modal-close:hover {
-    color: #333;
+  #projects .project:hover {
+    box-shadow: 0 8px 20px rgba(255,102,0,0.4);
+    transform: translateY(-5px);
   }
-  .modal h3 {
+  #projects .project h3 {
     margin-top: 0;
+    color: #ff6600;
+  }
+  #projects .project p {
+    color: #555;
   }
 
-  @media (max-width: 600px) {
-    .hero {
+  /* Creative Experience */
+  #creative {
+    background: #fff4e6;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255,102,0,0.2);
+  }
+  #creative .exp-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  #creative .exp-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 3px 10px rgba(255,102,0,0.25);
+  }
+  #creative .exp-item .details {
+    flex: 1;
+  }
+  #creative .exp-item .details h4 {
+    margin: 0 0 0.3rem 0;
+    color: #ff6600;
+  }
+  #creative .exp-item .details p {
+    margin: 0;
+    color: #444;
+    font-size: 0.95rem;
+  }
+
+  /* Skills Section */
+  #skills ul {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    color: #555;
+    font-size: 1.1rem;
+  }
+  #skills ul li {
+    margin-bottom: 0.6rem;
+  }
+
+  /* Contact Section */
+  #contact p {
+    font-size: 1.1rem;
+    color: #444;
+  }
+  #contact a {
+    color: #ff6600;
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    #about {
       flex-direction: column;
-      align-items: center;
       text-align: center;
     }
-    .hero-text {
-      min-width: 100%;
+    #about img {
+      margin-bottom: 1rem;
+    }
+    #projects .project-list {
+      grid-template-columns: 1fr;
+    }
+    #skills ul {
+      columns: 1;
+    }
+    #creative .exp-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #creative .exp-item img {
+      margin-bottom: 0.5rem;
     }
   }
 </style>
@@ -221,135 +219,126 @@
 <body>
 
 <header>
-  <h1>Jagadeesh Muthamsetty</h1>
+  <h1>Jagadeesh</h1>
   <nav>
-    <a href="#summary">Summary</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#about" class="nav-link active">About</a>
+    <a href="#summary" class="nav-link">Summary</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#creative" class="nav-link">Creative Experience</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 </header>
 
 <main>
-
-  <div class="hero" id="hero">
+  <section id="about">
     <img src="personal.png" alt="Jagadeesh Muthamsetty" />
-    <div class="hero-text">
-      <h2>Hello! I'm Jagadeesh</h2>
-      <p>Front-end Developer | Digital Marketer | Content Creator</p>
+    <div class="info">
+      <h2>Jagadeesh Muthamsetty</h2>
+      <p>Email: <a href="mailto:jagadeeshmuthamsetty@gmail.com">jagadeeshmuthamsetty@gmail.com</a><br/>
+         Mobile: +44 7585 685622<br/>
+         Location: Liverpool, UK<br/>
+         <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank" rel="noopener">LinkedIn Profile</a>
+      </p>
     </div>
-  </div>
+  </section>
 
   <section id="summary">
-    <h2>Summary</h2>
+    <h2 class="section-title">Summary</h2>
     <p>Proactive and self-motivated front-end web developer with a strong foundation in digital marketing and a proven track record of scaling a digital product from inception to over 250,000+ users. Demonstrated expertise in UI/UX design, conversion-focused development, and marketing strategy execution. Seeking to contribute technical and strategic skills to a dynamic e-commerce team in the UK.</p>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-list">
-      <div class="project-card">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-list">
+      <div class="project">
         <h3>Portfolio Website</h3>
-        <p>A responsive portfolio website showcasing my skills and projects.</p>
-        <button class="btn-details" data-project="portfolio">Details</button>
+        <p>A clean, modern portfolio site to showcase work and skills.</p>
       </div>
-      <div class="project-card">
+      <div class="project">
         <h3>Chatbot</h3>
-        <p>Interactive chatbot application using AI and NLP technologies.</p>
-        <button class="btn-details" data-project="chatbot">Details</button>
+        <p>Interactive chatbot built with AI to assist users on websites.</p>
       </div>
-      <div class="project-card">
+      <div class="project">
         <h3>E-commerce App</h3>
-        <p>Full-stack e-commerce app with user authentication and payment integration.</p>
-        <button class="btn-details" data-project="ecommerce">Details</button>
+        <p>Developed an e-commerce platform focused on user experience and conversion.</p>
       </div>
-      <div class="project-card">
+      <div class="project">
         <h3>Blog Platform</h3>
-        <p>Custom blog platform with CMS and SEO optimization.</p>
-        <button class="btn-details" data-project="blog">Details</button>
+        <p>Custom blog platform built with user-friendly CMS features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="creative">
+    <h2 class="section-title">Creative Experience</h2>
+
+    <div class="exp-item">
+      <img src="experience.png" alt="Scape Tree" />
+      <div class="details">
+        <h4>Front-End Developer Intern | Scape Tree</h4>
+        <p>July 2022 - December 2022, Bangalore, India<br/>
+        Developed and maintained front-end using HTML, CSS, JavaScript. Integrated APIs and ensured mobile responsiveness. Participated in UI design reviews.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <img src="experience.png" alt="Ex-Money" />
+      <div class="details">
+        <h4>Co-Founder | Ex-Money</h4>
+        <p>2020 - 2021, India<br/>
+        Founded a mobile microloan startup with 250,000+ app downloads. Managed marketing funnels, SEO, product roadmap, and customer support.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <img src="experience.png" alt="Regional Movie Blog" />
+      <div class="details">
+        <h4>Regional Movie Blog & Influencer Collaboration | Freelance</h4>
+        <p>2021 - Present<br/>
+        Managed niche blog on regional cinema, coordinated with influencers, secured sponsored content, and handled SEO.</p>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill">JavaScript</div>
-      <div class="skill">Python</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">React</div>
-      <div class="skill">Node.js</div>
-      <div class="skill">Git</div>
-      <div class="skill">Docker</div>
-    </div>
+    <h2 class="section-title">Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript, Responsive Design, UI/UX</li>
+      <li>Google Ads (basic), SEO, Social Media Management, Google Analytics</li>
+      <li>Meta Ads Manager, CMS platforms, Influencer Coordination</li>
+      <li>Creative thinking, entrepreneurship, adaptability, team collaboration</li>
+      <li>Languages: English, Hindi, Telugu, Tamil, Kannada</li>
+    </ul>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
     <p>Email: <a href="mailto:jagadeeshmuthamsetty@gmail.com">jagadeeshmuthamsetty@gmail.com</a></p>
-    <p>Phone: <a href="tel:+447585685622">+44 7585 685622</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank" rel="noopener">Jagadeesh Muthamsetty</a></p>
+    <p>Phone: +44 7585 685622</p>
+    <p>Location: Liverpool, UK</p>
   </section>
-
 </main>
 
-<!-- Modal -->
-<div class="modal" id="projectModal">
-  <div class="modal-content">
-    <span class="modal-close" id="modalClose">&times;</span>
-    <h3 id="modalTitle">Project Title</h3>
-    <p id="modalDescription">Project details will appear here...</p>
-  </div>
-</div>
-
 <script>
-  // Modal logic
-  const modal = document.getElementById('projectModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDescription = document.getElementById('modalDescription');
-  const modalClose = document.getElementById('modalClose');
+  // Highlight nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
 
-  // Project details data
-  const projectsDetails = {
-    portfolio: {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website built with HTML, CSS, and JavaScript showcasing my skills, projects, and contact information.'
-    },
-    chatbot: {
-      title: 'Chatbot',
-      description: 'An interactive chatbot application using AI and natural language processing to assist users with inquiries and automate tasks.'
-    },
-    ecommerce: {
-      title: 'E-commerce App',
-      description: 'A full-stack e-commerce application featuring user authentication, product catalog, shopping cart, and secure payment integration.'
-    },
-    blog: {
-      title: 'Blog Platform',
-      description: 'A custom blog platform with content management system (CMS), SEO optimization, and responsive design.'
-    }
-  };
-
-  document.querySelectorAll('.btn-details').forEach(button => {
-    button.addEventListener('click', () => {
-      const projectKey = button.getAttribute('data-project');
-      if (projectsDetails[projectKey]) {
-        modalTitle.textContent = projectsDetails[projectKey].title;
-        modalDescription.textContent = projectsDetails[projectKey].description;
-        modal.style.display = 'flex';
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
       }
     });
-  });
-
-  modalClose.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close modal when clicking outside content
-  window.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
   });
 </script>
 
