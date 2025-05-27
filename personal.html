@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Personal Details - Jagadeesh</title>
+  <title>Auto Scrolling Images</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f0f0;
+      font-family: sans-serif;
+      background: #f5f5f5;
     }
 
     header {
@@ -23,30 +23,29 @@
       margin: 0;
     }
 
-    .gallery-wrapper {
+    .scrolling-wrapper {
       overflow: hidden;
       white-space: nowrap;
-      background: #fff;
+      box-sizing: border-box;
       padding: 20px 0;
-      position: relative;
+      background: white;
     }
 
-    .image-strip {
+    .scrolling-images {
       display: inline-block;
-      white-space: nowrap;
-      animation: scroll-left 25s linear infinite;
+      animation: scroll 30s linear infinite;
     }
 
-    .image-strip img {
+    .scrolling-images img {
       width: 300px;
       height: 200px;
-      margin-right: 20px;
+      margin: 0 10px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
-    @keyframes scroll-left {
+    @keyframes scroll {
       0% {
         transform: translateX(0%);
       }
@@ -76,24 +75,23 @@
 </head>
 <body>
   <header>
-    <h1>Personal Details</h1>
+    <h1>Personal Details - Jagadeesh</h1>
   </header>
 
-  <div class="gallery-wrapper">
-    <div class="image-strip">
-      <!-- Add 5 images and repeat for seamless loop -->
-      <img src="personal1.jpg" alt="Image 1" />
-      <img src="personal2.jpg" alt="Image 2" />
-      <img src="personal3.jpg" alt="Image 3" />
-      <img src="personal4.jpg" alt="Image 4" />
-      <img src="personal5.jpg" alt="Image 5" />
+  <div class="scrolling-wrapper">
+    <div class="scrolling-images">
+      <img src="personal1.jpg" alt="Personal 1" />
+      <img src="personal2.jpg" alt="Personal 2" />
+      <img src="personal3.jpg" alt="Personal 3" />
+      <img src="personal4.jpg" alt="Personal 4" />
+      <img src="personal5.jpg" alt="Personal 5" />
 
-      <!-- Repeat for smooth animation -->
-      <img src="personal1.jpg" alt="Image 1" />
-      <img src="personal2.jpg" alt="Image 2" />
-      <img src="personal3.jpg" alt="Image 3" />
-      <img src="personal4.jpg" alt="Image 4" />
-      <img src="personal5.jpg" alt="Image 5" />
+      <!-- Repeat for smooth infinite scroll -->
+      <img src="personal1.jpg" alt="Personal 1" />
+      <img src="personal2.jpg" alt="Personal 2" />
+      <img src="personal3.jpg" alt="Personal 3" />
+      <img src="personal4.jpg" alt="Personal 4" />
+      <img src="personal5.jpg" alt="Personal 5" />
     </div>
   </div>
 
