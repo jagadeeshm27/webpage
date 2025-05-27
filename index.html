@@ -37,14 +37,64 @@
     nav a:hover {
       color: #ff9900;
     }
-    .container {
+
+    /* Layout container for main content: 2 columns */
+    .main-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 2rem;
-      max-width: 960px;
-      margin: 0 auto;
+      grid-template-columns: 2fr 1fr; /* Left column wider */
+      gap: 30px;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
+
+    /* Left column - vertical stack of cards */
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Right column - creative freelance experience */
+    .right-column {
+      background-color: #fff4e6;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .right-column h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #232f3e;
+      text-align: center;
+    }
+
+    .creative-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+    .creative-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .creative-card img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
+      border-radius: 8px;
+    }
+    .creative-card a {
+      color: #232f3e;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
     .card {
       background: white;
       border-radius: 8px;
@@ -69,14 +119,15 @@
     p {
       line-height: 1.5;
     }
-    section#portfolio {
-      background-color: #fff4e6;
-      padding: 2rem 0;
-    }
-    section#portfolio h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #232f3e;
+
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+      .right-column {
+        margin-top: 2rem;
+      }
     }
   </style>
 </head>
@@ -89,60 +140,63 @@
       <a href="#projects">Projects</a>
       <a href="#experience">Creative Experience</a>
       <a href="#hobbies">Hobbies</a>
-      <a href="#portfolio">Creative Freelance Experience</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="card" id="personal">
-      <img src="personal.png" alt="Personal Details" />
-      <h2>Personal Details</h2>
-      <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
+  <div class="main-content">
+    <!-- Left side main info cards -->
+    <div class="left-column">
+      <div class="card" id="personal">
+        <img src="personal.png" alt="Personal Details" />
+        <h2>Personal Details</h2>
+        <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
+      </div>
+      <div class="card" id="skills">
+        <img src="skills.png" alt="Skills" />
+        <h2>Skills</h2>
+        <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
+      </div>
+      <div class="card" id="projects">
+        <img src="projects.png" alt="Projects" />
+        <h2>Projects</h2>
+        <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
+      </div>
+      <div class="card" id="experience">
+        <img src="experience.png" alt="Creative Experience" />
+        <h2>Creative Experience</h2>
+        <p>Freelance video editor for YouTubers and content creators including Phanumantu and RJ Abhinav. Skilled in video editing, motion graphics, and content optimization.</p>
+      </div>
+      <div class="card" id="hobbies">
+        <img src="hobbies.png" alt="Hobbies" />
+        <h2>Hobbies</h2>
+        <p>Travelling, Foodie</p>
+      </div>
+      <div class="card" id="contact">
+        <img src="contact.png" alt="Contact" />
+        <h2>Contact</h2>
+        <p>Email: jagadeesh@example.com<br/>Phone: +1234567890</p>
+      </div>
     </div>
-    <div class="card" id="skills">
-      <img src="skills.png" alt="Skills" />
-      <h2>Skills</h2>
-      <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
-    </div>
-    <div class="card" id="projects">
-      <img src="projects.png" alt="Projects" />
-      <h2>Projects</h2>
-      <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
-    </div>
-    <div class="card" id="experience">
-      <img src="experience.png" alt="Creative Experience" />
-      <h2>Creative Experience</h2>
-      <p>Freelance video editor for YouTubers and content creators including Phanumantu and RJ Abhinav. Skilled in video editing, motion graphics, and content optimization.</p>
-    </div>
-    <div class="card" id="hobbies">
-      <img src="hobbies.png" alt="Hobbies" />
-      <h2>Hobbies</h2>
-      <p>Travelling, Foodie</p>
-    </div>
-    <div class="card" id="contact">
-      <img src="contact.png" alt="Contact" />
-      <h2>Contact</h2>
-      <p>Email: jagadeesh@example.com<br/>Phone: +1234567890</p>
-    </div>
-  </div>
 
-  <section id="portfolio">
-    <h2>Creative Freelance Experience</h2>
-    <div class="container">
-      <div class="card">
+    <!-- Right side creative freelance experience -->
+    <aside class="right-column" id="portfolio">
+      <h2>Creative Freelance Experience</h2>
+
+      <div class="creative-card">
         <img src="phanumantu.png" alt="Phanumantu YouTube" />
-        <h2>Video Editing - Phanumantu</h2>
+        <h3>Video Editing - Phanumantu</h3>
         <p>Worked as a freelance video editor for <strong>Phanumantu</strong>, a creative content channel. Responsible for editing, motion graphics, and YouTube optimization.</p>
         <p><a href="https://youtube.com/@Phanumantu" target="_blank" rel="noopener noreferrer">Visit Channel</a></p>
       </div>
-      <div class="card">
-        <img src="rjabhinav.png" alt="rjabhinav Instagram" />
-        <h2>Content Editing - RJ Abhinav</h2>
-        <p>Collaborated with <strong>RJ Abhinavv</strong> as an editor for short-form Instagram content. Handled pacing, effects, captions, and music syncing.</p>
-        <p><a href="https://www.instagram.com/rjabhinavv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Visit Instagram</a></p>
+
+      <div class="creative-card">
+        <img src="rjabhinav.png" alt="RJ Abhinav Instagram" />
+        <h3>Content Editing - RJ Abhinav</h3>
+        <p>Collaborated with <strong>RJ Abhinav</strong> as an editor for short-form Instagram content. Handled pacing, effects, captions, and music syncing.</p>
+        <p><a href="https://instagram.com/rjabhinav" target="_blank" rel="noopener noreferrer">Visit Instagram</a></p>
       </div>
-    </div>
-  </section>
+    </aside>
+  </div>
 </body>
 </html>
