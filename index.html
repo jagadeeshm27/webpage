@@ -3,344 +3,283 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jagadeesh Muthamsetty | Portfolio</title>
+<title>Jagadeesh Muthamsetty - Portfolio</title>
 <style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0;
-    background: #f9f9f9;
-    color: #222;
-    scroll-behavior: smooth;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  img {
-    max-width: 100%;
-    display: block;
+  /* Reset & basics */
+  body, html {
+    margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa; color: #222;
   }
 
-  /* Header */
   header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 999;
+    background: #232f3e;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-    height: 60px;
   }
+
   header h1 {
+    margin: 0;
     font-weight: 700;
-    font-size: 1.5rem;
-    color: #ff6600;
-    cursor: default;
+    font-size: 1.8rem;
   }
+
   nav a {
-    margin-left: 2rem;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.8rem;
     font-weight: 600;
     font-size: 1rem;
-    color: #444;
     transition: color 0.3s ease;
   }
-  nav a:hover,
-  nav a.active {
-    color: #ff6600;
+
+  nav a:hover {
+    color: #ff9900;
   }
 
-  /* Container for sections */
   main {
-    padding-top: 80px;
-    max-width: 900px;
-    margin: 0 auto 4rem auto;
-  }
-
-  section {
-    margin-bottom: 5rem;
-  }
-
-  /* About Section */
-  #about {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  #about img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(255,102,0,0.3);
-  }
-  #about .info {
-    flex: 1;
-  }
-  #about .info h2 {
-    margin: 0 0 0.5rem 0;
-    font-size: 2rem;
-    color: #ff6600;
-  }
-  #about .info p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #555;
-  }
-
-  /* Section Titles */
-  h2.section-title {
-    font-size: 1.8rem;
-    border-left: 5px solid #ff6600;
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-
-  /* Summary */
-  #summary p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-  }
-
-  /* Projects Section */
-  #projects .project-list {
+    max-width: 1100px;
+    margin: 2rem auto 5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  #projects .project {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-  }
-  #projects .project:hover {
-    box-shadow: 0 8px 20px rgba(255,102,0,0.4);
-    transform: translateY(-5px);
-  }
-  #projects .project h3 {
-    margin-top: 0;
-    color: #ff6600;
-  }
-  #projects .project p {
-    color: #555;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 2.5rem;
+    padding: 0 1rem;
   }
 
-  /* Creative Experience */
-  #creative {
-    background: #fff4e6;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(255,102,0,0.2);
-  }
-  #creative .exp-item {
+  /* Left blocks */
+  .blocks {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  #creative .exp-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 3px 10px rgba(255,102,0,0.25);
-  }
-  #creative .exp-item .details {
-    flex: 1;
-  }
-  #creative .exp-item .details h4 {
-    margin: 0 0 0.3rem 0;
-    color: #ff6600;
-  }
-  #creative .exp-item .details p {
-    margin: 0;
-    color: #444;
-    font-size: 0.95rem;
+    flex-direction: column;
+    gap: 1.8rem;
   }
 
-  /* Skills Section */
-  #skills ul {
-    list-style: none;
-    padding: 0;
-    columns: 2;
-    color: #555;
-    font-size: 1.1rem;
+  .block {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 1.6rem 1.8rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
   }
-  #skills ul li {
+
+  .block:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    transform: translateY(-6px);
+  }
+
+  .block img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  .block h2 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.5rem;
+    color: #232f3e;
+  }
+
+  .block p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* Right column: creative experience */
+  .creative-experience {
+    background: #fff4e6;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 1.8rem 1.6rem;
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .creative-experience:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    transform: translateY(-8px);
+  }
+
+  .creative-experience img {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .creative-experience h2 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.7rem;
+    color: #b35900;
+  }
+
+  .creative-experience p {
+    font-size: 1.1rem;
+    color: #6b4f00;
+    text-align: center;
+  }
+
+  .creative-preview {
+    margin-top: 1.5rem;
+    background: #ffd580;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #6b4f00;
+    font-size: 1rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .creative-experience:hover .creative-preview {
+    opacity: 1;
+    max-height: 200px;
+  }
+
+  /* Bottom scrolling section */
+  .bottom-scroll {
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    line-height: 1.6;
+  }
+
+  .bottom-scroll h2 {
+    color: #232f3e;
+    margin-bottom: 1rem;
+  }
+
+  .bottom-scroll p, .bottom-scroll ul {
+    font-size: 1.1rem;
+    color: #444;
+  }
+
+  .bottom-scroll ul {
+    padding-left: 1.2rem;
+  }
+
+  .bottom-scroll ul li {
     margin-bottom: 0.6rem;
   }
 
-  /* Contact Section */
-  #contact p {
-    font-size: 1.1rem;
-    color: #444;
-  }
-  #contact a {
-    color: #ff6600;
-    font-weight: 600;
-  }
-
   /* Responsive */
-  @media (max-width: 700px) {
-    #about {
-      flex-direction: column;
-      text-align: center;
-    }
-    #about img {
-      margin-bottom: 1rem;
-    }
-    #projects .project-list {
+  @media(max-width: 900px) {
+    main {
       grid-template-columns: 1fr;
     }
-    #skills ul {
-      columns: 1;
-    }
-    #creative .exp-item {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    #creative .exp-item img {
-      margin-bottom: 0.5rem;
+    .creative-experience {
+      position: static;
+      margin-top: 3rem;
+      width: 100%;
     }
   }
+
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Jagadeesh</h1>
+  <h1>Jagadeesh Muthamsetty</h1>
   <nav>
-    <a href="#about" class="nav-link active">About</a>
-    <a href="#summary" class="nav-link">Summary</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#creative" class="nav-link">Creative Experience</a>
-    <a href="#skills" class="nav-link">Skills</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#personal">Personal</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
-  <section id="about">
-    <img src="personal.png" alt="Jagadeesh Muthamsetty" />
-    <div class="info">
-      <h2>Jagadeesh Muthamsetty</h2>
-      <p>Email: <a href="mailto:jagadeeshmuthamsetty@gmail.com">jagadeeshmuthamsetty@gmail.com</a><br/>
-         Mobile: +44 7585 685622<br/>
-         Location: Liverpool, UK<br/>
-         <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank" rel="noopener">LinkedIn Profile</a>
-      </p>
+  <section class="blocks">
+    <div class="block" id="personal" onclick="window.location.href='personal.html'">
+      <img src="personal.png" alt="Personal Details" />
+      <h2>Personal Details</h2>
+      <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
+    </div>
+
+    <div class="block" id="skills" onclick="window.location.href='skills.html'">
+      <img src="skills.png" alt="Skills" />
+      <h2>Skills</h2>
+      <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
+    </div>
+
+    <div class="block" id="projects" onclick="window.location.href='projects.html'">
+      <img src="projects.png" alt="Projects" />
+      <h2>Projects</h2>
+      <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
+    </div>
+
+    <div class="block" id="hobbies" onclick="window.location.href='hobbies.html'">
+      <img src="hobbies.png" alt="Hobbies" />
+      <h2>Hobbies</h2>
+      <p>Travelling, Foodie</p>
+    </div>
+
+    <div class="block" id="contact" onclick="window.location.href='contact.html'">
+      <img src="contact.png" alt="Contact" />
+      <h2>Contact</h2>
+      <p>Email: jagadeeshmuthamsetty@gmail.com<br />Phone: +44 7585685622</p>
     </div>
   </section>
 
-  <section id="summary">
-    <h2 class="section-title">Summary</h2>
-    <p>Proactive and self-motivated front-end web developer with a strong foundation in digital marketing and a proven track record of scaling a digital product from inception to over 250,000+ users. Demonstrated expertise in UI/UX design, conversion-focused development, and marketing strategy execution. Seeking to contribute technical and strategic skills to a dynamic e-commerce team in the UK.</p>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-list">
-      <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>A clean, modern portfolio site to showcase work and skills.</p>
-      </div>
-      <div class="project">
-        <h3>Chatbot</h3>
-        <p>Interactive chatbot built with AI to assist users on websites.</p>
-      </div>
-      <div class="project">
-        <h3>E-commerce App</h3>
-        <p>Developed an e-commerce platform focused on user experience and conversion.</p>
-      </div>
-      <div class="project">
-        <h3>Blog Platform</h3>
-        <p>Custom blog platform built with user-friendly CMS features.</p>
-      </div>
+  <aside class="creative-experience" onclick="window.location.href='creative.html'">
+    <img src="experience.png" alt="Creative Experience" />
+    <h2>Creative Experience</h2>
+    <p>Freelance editor for YouTubers & content creators.</p>
+    <div class="creative-preview">
+      <ul>
+        <li>Phanumantu YouTube channel editing</li>
+        <li>RJ Abhinav Instagram content editing</li>
+        <li>Motion graphics & video optimization</li>
+      </ul>
+      <p><em>Click to see full portfolio</em></p>
     </div>
-  </section>
-
-  <section id="creative">
-    <h2 class="section-title">Creative Experience</h2>
-
-    <div class="exp-item">
-      <img src="experience.png" alt="Scape Tree" />
-      <div class="details">
-        <h4>Front-End Developer Intern | Scape Tree</h4>
-        <p>July 2022 - December 2022, Bangalore, India<br/>
-        Developed and maintained front-end using HTML, CSS, JavaScript. Integrated APIs and ensured mobile responsiveness. Participated in UI design reviews.</p>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <img src="experience.png" alt="Ex-Money" />
-      <div class="details">
-        <h4>Co-Founder | Ex-Money</h4>
-        <p>2020 - 2021, India<br/>
-        Founded a mobile microloan startup with 250,000+ app downloads. Managed marketing funnels, SEO, product roadmap, and customer support.</p>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <img src="experience.png" alt="Regional Movie Blog" />
-      <div class="details">
-        <h4>Regional Movie Blog & Influencer Collaboration | Freelance</h4>
-        <p>2021 - Present<br/>
-        Managed niche blog on regional cinema, coordinated with influencers, secured sponsored content, and handled SEO.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript, Responsive Design, UI/UX</li>
-      <li>Google Ads (basic), SEO, Social Media Management, Google Analytics</li>
-      <li>Meta Ads Manager, CMS platforms, Influencer Coordination</li>
-      <li>Creative thinking, entrepreneurship, adaptability, team collaboration</li>
-      <li>Languages: English, Hindi, Telugu, Tamil, Kannada</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:jagadeeshmuthamsetty@gmail.com">jagadeeshmuthamsetty@gmail.com</a></p>
-    <p>Phone: +44 7585 685622</p>
-    <p>Location: Liverpool, UK</p>
-  </section>
+  </aside>
 </main>
 
-<script>
-  // Highlight nav link on scroll
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
+<section class="bottom-scroll">
+  <h2>About Me & Work Summary</h2>
+  <p>
+    I am a proactive and self-motivated front-end web developer with a strong background in digital marketing. I've helped scale a digital product to 250,000+ users, skilled in UI/UX, conversion-focused development, and marketing strategy.
+  </p>
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').substring(1) === current) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
+  <h2>Work Experience</h2>
+  <ul>
+    <li><strong>Front-End Developer Intern at Scape Tree</strong> — July 2022 - Dec 2022: Developed & maintained front-end, integrated APIs, mobile responsiveness.</li>
+    <li><strong>Co-Founder at Ex-Money</strong> — 2020-2021: Founded microloan startup, grew user base, marketing funnels & SEO management.</li>
+    <li><strong>Freelance Regional Movie Blog & Influencer Collaboration</strong> — 2021-Present: Built niche blog, managed influencers, content creation & SEO.</li>
+  </ul>
+
+  <h2>Skills & Languages</h2>
+  <p>Web Development: HTML, CSS, JS, Responsive Design, UI/UX.<br />
+     Marketing: Google Ads, SEO, Social Media.<br />
+     Languages: English, Hindi, Telugu, Tamil, Kannada.</p>
+
+  <h2>Extracurricular</h2>
+  <ul>
+    <li>Student Ambassador: Led campus tours and university talks.</li>
+    <li>Media Secretary: Boosted club merchandise sales by 50% with promotions.</li>
+    <li>Treasurer: Fundraised ~20,000 INR for events.</li>
+    <li>Vice President: Led 200 members team with high satisfaction.</li>
+  </ul>
+</section>
 
 </body>
 </html>
