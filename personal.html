@@ -1,111 +1,99 @@
-]<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Personal Details - Jagadeesh</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
     }
 
     header {
       background: #232f3e;
       color: white;
       padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
     }
 
-    header h1 {
+    h1 {
       margin: 0;
-      font-size: 1.5rem;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #ff9900;
-    }
-
-    .content {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #232f3e;
-    }
-
-    /* Scrollable image row */
-    .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 1rem 0;
-      scroll-snap-type: x mandatory;
-    }
-
-    .scroll-container::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .scroll-container::-webkit-scrollbar-thumb {
-      background: #bbb;
-      border-radius: 4px;
-    }
-
-    .scroll-item {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      width: 300px;
-      height: 200px;
-      border-radius: 10px;
+    .gallery-container {
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 100%;
+      background: #fff;
+      padding: 2rem 0;
     }
 
-    .scroll-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .image-strip {
+      display: flex;
+      width: calc(300px * 10); /* If 5 images, duplicate to 10 for looping */
+      animation: scroll 20s linear infinite;
+    }
+
+    .image-strip img {
+      width: 300px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .back-button {
+      display: block;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: #fff;
+      background: #232f3e;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .back-button a:hover {
+      background: #ff9900;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Jagadeesh</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <h1>Personal Details</h1>
   </header>
 
-  <div class="content">
-    <h2>Personal Gallery</h2>
-    <p>Here are a few glimpses into my personal and professional life:</p>
+  <div class="gallery-container">
+    <div class="image-strip">
+      <!-- Duplicate images for seamless loop -->
+      <img src="personal1.jpg" alt="Personal 1">
+      <img src="personal2.jpg" alt="Personal 2">
+      <img src="personal3.jpg" alt="Personal 3">
+      <img src="personal4.jpg" alt="Personal 4">
+      <img src="personal5.jpg" alt="Personal 5">
 
-    <div class="scroll-container">
-      <div class="scroll-item"><img src="personal1.jpg" alt="Personal 1" /></div>
-      <div class="scroll-item"><img src="personal2.jpg" alt="Personal 2" /></div>
-      <div class="scroll-item"><img src="personal3.jpg" alt="Personal 3" /></div>
-      <div class="scroll-item"><img src="personal4.jpg" alt="Personal 4" /></div>
-      <div class="scroll-item"><img src="personal5.jpg" alt="Personal 5" /></div>
+      <!-- Repeat to make seamless scroll -->
+      <img src="personal1.jpg" alt="Personal 1">
+      <img src="personal2.jpg" alt="Personal 2">
+      <img src="personal3.jpg" alt="Personal 3">
+      <img src="personal4.jpg" alt="Personal 4">
+      <img src="personal5.jpg" alt="Personal 5">
     </div>
   </div>
 
+  <div class="back-button">
+    <a href="index.html">← Back to Home</a>
+  </div>
 </body>
 </html>
