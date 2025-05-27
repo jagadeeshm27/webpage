@@ -1,100 +1,111 @@
-<!-- index.html -->
-<!DOCTYPE html>
+]<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jagadeesh's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Jagadeesh</h1>
-    <nav>
-      <a href="personal.html">Personal Details</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#creative">Creative Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="grid">
-      <a class="card" href="personal.html">
-        <h2>Personal Details</h2>
-        <p>Click to explore my personal journey and gallery.</p>
-      </a>
-
-      <div class="card" id="skills">
-        <h2>Skills</h2>
-        <p>HTML, CSS, JavaScript, UI/UX, SEO, Digital Marketing</p>
-      </div>
-
-      <div class="card" id="projects">
-        <h2>Projects</h2>
-        <p>Portfolio Website, E-commerce App, Blog Platform</p>
-      </div>
-
-      <div class="card" id="creative">
-        <h2>Creative Experience</h2>
-        <p>Freelance work for Phanumantu & RJ Abhinav</p>
-      </div>
-
-      <div class="card" id="contact">
-        <h2>Contact</h2>
-        <p>Email: jagadeeshmuthamsetty@gmail.com<br>Phone: +44 07585685622</p>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
-
-<!-- personal.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Details - Jagadeesh</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
+
+    header {
+      background: #232f3e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .horizontal-scroll {
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff9900;
+    }
+
+    .content {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #232f3e;
+    }
+
+    /* Scrollable image row */
+    .scroll-container {
       display: flex;
       overflow-x: auto;
-      gap: 15px;
-      padding: 20px 0;
+      gap: 20px;
+      padding: 1rem 0;
+      scroll-snap-type: x mandatory;
     }
-    .horizontal-scroll img {
+
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 4px;
+    }
+
+    .scroll-item {
       flex: 0 0 auto;
-      width: 200px;
+      scroll-snap-align: start;
+      width: 300px;
       height: 200px;
-      object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .horizontal-scroll img:hover {
-      transform: scale(1.05);
+
+    .scroll-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <h1>Personal Life & Memories</h1>
-  <div class="horizontal-scroll">
-    <img src="personal1.jpg" alt="Personal photo 1">
-    <img src="personal2.jpg" alt="Personal photo 2">
-    <img src="personal3.jpg" alt="Personal photo 3">
-    <img src="personal4.jpg" alt="Personal photo 4">
+
+  <header>
+    <h1>Jagadeesh</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h2>Personal Gallery</h2>
+    <p>Here are a few glimpses into my personal and professional life:</p>
+
+    <div class="scroll-container">
+      <div class="scroll-item"><img src="personal1.jpg" alt="Personal 1" /></div>
+      <div class="scroll-item"><img src="personal2.jpg" alt="Personal 2" /></div>
+      <div class="scroll-item"><img src="personal3.jpg" alt="Personal 3" /></div>
+      <div class="scroll-item"><img src="personal4.jpg" alt="Personal 4" /></div>
+      <div class="scroll-item"><img src="personal5.jpg" alt="Personal 5" /></div>
+    </div>
   </div>
+
 </body>
 </html>
