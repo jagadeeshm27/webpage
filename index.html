@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jagadeesh's Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #232f3e;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    h2 {
+      margin-top: 0;
+      color: #232f3e;
+    }
+    p {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>Jagadeesh's Personal Website</header>
+  <div class="container">
+    <div class="card">
+      <h2>Personal Details</h2>
+      <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
+    </div>
+    <div class="card">
+      <h2>Skills</h2>
+      <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
+    </div>
+    <div class="card">
+      <h2>Projects</h2>
+      <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
+    </div>
+    <div class="card">
+      <h2>Interests</h2>
+      <p>Open source, Machine learning, Hiking, Photography</p>
+    </div>
+  </div>
+</body>
+</html>
