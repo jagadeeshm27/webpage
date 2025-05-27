@@ -37,42 +37,24 @@
     nav a:hover {
       color: #ff9900;
     }
-    .hero {
-      background: linear-gradient(to right, #232f3e, #37475a);
-      color: white;
-      text-align: center;
-      padding: 5rem 2rem;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    section {
-      padding: 3rem 2rem;
-    }
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      max-width: 1100px;
+      padding: 2rem;
+      max-width: 960px;
       margin: 0 auto;
     }
     .card {
       background: white;
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
       text-align: center;
-      transition: transform 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     .card img {
       width: 80px;
@@ -81,22 +63,24 @@
       margin-bottom: 1rem;
     }
     h2 {
+      margin-top: 0;
       color: #232f3e;
     }
     p {
-      line-height: 1.6;
+      line-height: 1.5;
     }
-    footer {
-      background: #232f3e;
-      color: white;
+    section#portfolio {
+      background-color: #fff4e6;
+      padding: 2rem 0;
+    }
+    section#portfolio h2 {
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: #232f3e;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Jagadeesh</h1>
     <nav>
@@ -104,68 +88,55 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#hobbies">Hobbies</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to My Personal Website</h2>
-    <p>I’m Jagadeesh — a developer who loves to build, explore, and share. Check out my work, interests, and skills!</p>
-  </section>
+  <div class="container">
+    <div class="card" id="personal">
+      <img src="personal.png" alt="Personal Details" />
+      <h2>Personal Details</h2>
+      <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
+    </div>
+    <div class="card" id="skills">
+      <img src="skills.png" alt="Skills" />
+      <h2>Skills</h2>
+      <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
+    </div>
+    <div class="card" id="projects">
+      <img src="projects.png" alt="Projects" />
+      <h2>Projects</h2>
+      <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
+    </div>
+    <div class="card" id="hobbies">
+      <img src="hobbies.png" alt="Hobbies" />
+      <h2>Hobbies</h2>
+      <p>Travelling, Foodie</p>
+    </div>
+    <div class="card" id="contact">
+      <img src="contact.png" alt="Contact" />
+      <h2>Contact</h2>
+      <p>Email: jagadeesh@example.com<br/>Phone: +1234567890</p>
+    </div>
+  </div>
 
-  <section id="personal">
+  <section id="portfolio">
+    <h2>Portfolio</h2>
     <div class="container">
       <div class="card">
-        <img src="personal.png" alt="Personal Details" />
-        <h2>Personal Details</h2>
-        <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
+        <img src="phanumantu.png" alt="Phanumantu YouTube" />
+        <h2>Video Editing - Phanumantu</h2>
+        <p>Worked as a freelance video editor for <strong>Phanumantu</strong>, a creative content channel. Responsible for editing, motion graphics, and YouTube optimization.</p>
+        <p><a href="https://youtube.com/@Phanumantu" target="_blank" rel="noopener noreferrer">Visit Channel</a></p>
+      </div>
+      <div class="card">
+        <img src="rjabhinav.png" alt="rjabhinav Instagram" />
+        <h2>Content Editing - RJ Abhinav</h2>
+        <p>Collaborated with <strong>RJ Abhinav</strong> as an editor for short-form Instagram content. Handled pacing, effects, captions, and music syncing.</p>
+        <p><a href="https://instagram.com/rjabhinav" target="_blank" rel="noopener noreferrer">Visit Instagram</a></p>
       </div>
     </div>
   </section>
-
-  <section id="skills" style="background-color:#eaf0f6;">
-    <div class="container">
-      <div class="card">
-        <img src="skills.png" alt="Skills" />
-        <h2>Skills</h2>
-        <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="card">
-        <img src="projects.png" alt="Projects" />
-        <h2>Projects</h2>
-        <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="hobbies" style="background-color:#eaf0f6;">
-    <div class="container">
-      <div class="card">
-        <img src="hobbies.png" alt="Hobbies" />
-        <h2>Hobbies</h2>
-        <p>Travelling, Foodie</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="card">
-        <img src="contact.png" alt="Contact" />
-        <h2>Contact</h2>
-        <p>Email: jagadeesh@example.com<br/>Phone: +1234567890</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Jagadeesh. All rights reserved.</p>
-  </footer>
-
 </body>
 </html>
