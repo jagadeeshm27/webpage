@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jagadeesh Portfolio</title>
+  <title>Jagadeesh's Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background: #f4f4f4;
       color: #333;
@@ -14,14 +14,14 @@
 
     header {
       background: #232f3e;
-      color: white;
+      color: #fff;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     header h1 {
@@ -30,10 +30,10 @@
     }
 
     nav a {
-      color: white;
-      margin-left: 1.5rem;
+      color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     nav a:hover {
@@ -44,9 +44,13 @@
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
+    }
+
+    .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-bottom: 3rem;
     }
 
     .card {
@@ -54,8 +58,8 @@
       border-radius: 10px;
       padding: 1.5rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
       cursor: pointer;
     }
 
@@ -70,59 +74,77 @@
       margin-bottom: 1rem;
     }
 
-    h2 {
-      color: #232f3e;
+    .creative-section {
+      margin-top: 3rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
-    /* Creative Experience Scrolling Section */
-    .creative-experience {
-      margin-top: 4rem;
-      padding: 2rem 1rem;
-      background-color: #fff4e6;
-    }
-
-    .creative-experience h2 {
+    .creative-section h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
       text-align: center;
-      margin-bottom: 1.5rem;
       color: #232f3e;
     }
 
-    .scroll-container {
-      overflow: hidden;
-      white-space: nowrap;
+    .carousel-container {
       position: relative;
-    }
-
-    .scroll-images {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scrollLeft 40s linear infinite;
-    }
-
-    .scroll-images img {
-      width: 300px;
+      overflow: hidden;
+      width: 100%;
       height: 200px;
-      margin-right: 20px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 1rem;
     }
 
-    @keyframes scrollLeft {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+    .carousel-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll 20s linear infinite;
+    }
+
+    .carousel-track img {
+      width: 300px;
+      height: 180px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-track img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .creative-description {
+      display: none;
+      padding-top: 1rem;
+      color: #444;
+      text-align: center;
+    }
+
+    .creative-description.active {
+      display: block;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background: #232f3e;
-      color: white;
-      margin-top: 2rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-track img {
+        width: 200px;
+        height: 120px;
+      }
     }
   </style>
 </head>
@@ -131,69 +153,84 @@
   <header>
     <h1>Jagadeesh</h1>
     <nav>
-      <a href="personal.html">Personal</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="hobbies.html">Hobbies</a>
-      <a href="contact.html">Contact</a>
+      <a href="#personal">Personal</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#creative">Creative Work</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="main-content">
-    <div class="card" onclick="location.href='personal.html'">
-      <img src="personal.png" alt="Personal" />
-      <h2>Personal Details</h2>
-      <p>All about me and my background.</p>
-    </div>
+  <main class="main-content">
+    <div class="card-grid">
+      <div class="card" id="personal">
+        <img src="personal.png" alt="Personal" />
+        <h2>Personal</h2>
+        <p>Email: jagadeeshmuthamsetty@gmail.com<br>Phone: +44 07585685622<br>Location: Liverpool, UK</p>
+      </div>
 
-    <div class="card" onclick="location.href='skills.html'">
-      <img src="skills.png" alt="Skills" />
-      <h2>Skills</h2>
-      <p>Web development, marketing, and more.</p>
-    </div>
+      <div class="card" id="skills">
+        <img src="skills.png" alt="Skills" />
+        <h2>Skills</h2>
+        <p>HTML, CSS, JavaScript, React, Node.js, Git, SEO, Google Ads</p>
+      </div>
 
-    <div class="card" onclick="location.href='projects.html'">
-      <img src="projects.png" alt="Projects" />
-      <h2>Projects</h2>
-      <p>What I've built and created.</p>
-    </div>
+      <div class="card" id="projects">
+        <img src="projects.png" alt="Projects" />
+        <h2>Projects</h2>
+        <p>Portfolio site, Chatbot, Blog, E-commerce</p>
+      </div>
 
-    <div class="card" onclick="location.href='hobbies.html'">
-      <img src="hobbies.png" alt="Hobbies" />
-      <h2>Hobbies</h2>
-      <p>My passions beyond tech.</p>
-    </div>
-
-    <div class="card" onclick="location.href='contact.html'">
-      <img src="contact.png" alt="Contact" />
-      <h2>Contact</h2>
-      <p>Let's connect and talk!</p>
-    </div>
-  </div>
-
-  <!-- Creative Experience Section -->
-  <div class="creative-experience">
-    <h2>Creative Experience</h2>
-    <div class="scroll-container">
-      <div class="scroll-images">
-        <img src="personal1.jpg" alt="Creative Work 1" />
-        <img src="personal2.jpg" alt="Creative Work 2" />
-        <img src="personal3.jpg" alt="Creative Work 3" />
-        <img src="personal4.jpg" alt="Creative Work 4" />
-        <img src="personal5.jpg" alt="Creative Work 5" />
-        <!-- Duplicated for infinite loop -->
-        <img src="personal1.jpg" alt="Creative Work 1" />
-        <img src="personal2.jpg" alt="Creative Work 2" />
-        <img src="personal3.jpg" alt="Creative Work 3" />
-        <img src="personal4.jpg" alt="Creative Work 4" />
-        <img src="personal5.jpg" alt="Creative Work 5" />
+      <div class="card" id="contact">
+        <img src="contact.png" alt="Contact" />
+        <h2>Contact</h2>
+        <p><a href="mailto:jagadeeshmuthamsetty@gmail.com">Email Me</a><br><a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank">LinkedIn</a></p>
       </div>
     </div>
-  </div>
+
+    <!-- Creative Work Section -->
+    <section class="creative-section" id="creative">
+      <h2>Creative Experience</h2>
+
+      <div class="carousel-container">
+        <div class="carousel-track" id="carousel">
+          <img src="phanumantu.png" alt="Phanumantu" onclick="showDescription(0)">
+          <img src="rjabhinav.png" alt="RJ Abhinav" onclick="showDescription(1)">
+          <img src="cw.jpg" alt="Creative Work 1" onclick="showDescription(2)">
+          <img src="cw1.jpg" alt="Creative Work 2" onclick="showDescription(3)">
+        </div>
+      </div>
+
+      <div id="desc0" class="creative-description">
+        <h3>Phanumantu Channel</h3>
+        <p>Edited YouTube videos, added effects, managed post-production workflow for improved viewer retention.</p>
+      </div>
+      <div id="desc1" class="creative-description">
+        <h3>RJ Abhinav Insta</h3>
+        <p>Managed Instagram reels, optimized content timing, created viral shorts with motion graphics.</p>
+      </div>
+      <div id="desc2" class="creative-description">
+        <h3>University Event Support</h3>
+        <p>Organized student media for seminar coverage and support for various university events.</p>
+      </div>
+      <div id="desc3" class="creative-description">
+        <h3>Seminar Project Help</h3>
+        <p>Supported seminar projects as a visual editor, created presentation visuals and intro/outro clips.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Jagadeesh Muthamsetty. All rights reserved.
   </footer>
+
+  <script>
+    function showDescription(index) {
+      document.querySelectorAll('.creative-description').forEach((desc, i) => {
+        desc.classList.toggle('active', i === index);
+      });
+    }
+  </script>
 
 </body>
 </html>
