@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jagadeesh | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #333;
     }
-
     header {
       background-color: #232f3e;
       color: white;
@@ -20,27 +19,23 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
       font-weight: bold;
     }
-
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 2rem 1rem;
     }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       margin-bottom: 60px;
     }
-
     .card {
       background: white;
       border-radius: 12px;
@@ -49,11 +44,9 @@
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
       transition: transform 0.2s;
     }
-
     .card:hover {
       transform: translateY(-5px);
     }
-
     .card img {
       width: 80px;
       height: 80px;
@@ -61,11 +54,10 @@
       margin-bottom: 1rem;
     }
 
-    /* Creative Experience */
+    /* Creative Experience Section */
     .creative-section {
       margin-top: 50px;
     }
-
     .creative-title {
       font-size: 1.6rem;
       text-align: center;
@@ -73,96 +65,117 @@
     }
 
     .scroll-wrapper {
+      width: 100%;
       overflow: hidden;
       position: relative;
+      /* height to fit images */
+      height: 200px;
     }
 
     .scroll-track {
       display: flex;
-      width: fit-content;
-      animation: scroll 40s linear infinite;
+      width: calc(8 * 220px); /* 8 images total (4 unique x 2), each approx 220px wide including margin */
+      animation: scroll-left 20s linear infinite;
     }
 
     .scroll-track a {
+      flex: 0 0 200px; /* fixed width for each image */
       margin-right: 20px;
     }
 
     .scroll-track img {
+      width: 200px;
       height: 180px;
-      width: auto;
       border-radius: 10px;
       cursor: pointer;
+      object-fit: cover;
       transition: transform 0.2s;
     }
-
     .scroll-track img:hover {
       transform: scale(1.05);
     }
 
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-50%));
+      }
     }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Jagadeesh</h1>
-    <nav>
-      <a href="#personal">Personal</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#creative">Creative</a>
-    </nav>
-  </header>
+<header>
+  <h1>Jagadeesh</h1>
+  <nav>
+    <a href="#personal">Personal</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="container">
-    <div class="card-grid">
-      <div class="card" id="personal">
-        <img src="personal.png" alt="Personal">
-        <h2>Personal</h2>
-        <p>From Liverpool, love building ideas & digital experiences.</p>
-      </div>
+<div class="container">
 
-      <div class="card" id="skills">
-        <img src="skills.png" alt="Skills">
-        <h2>Skills</h2>
-        <p>Web Dev, UI/UX, SEO, Google Ads, JS, HTML, CSS</p>
-      </div>
+  <div class="card-grid">
+    <section class="card" id="personal">
+      <img src="personal.png" alt="Personal" />
+      <h2>Personal</h2>
+      <p>From Liverpool, love building ideas & digital experiences.</p>
+    </section>
 
-      <div class="card" id="projects">
-        <img src="projects.png" alt="Projects">
-        <h2>Projects</h2>
-        <p>Portfolio, SEO pages, ScapeTree frontend, etc.</p>
-      </div>
+    <section class="card" id="skills">
+      <img src="skills.png" alt="Skills" />
+      <h2>Skills</h2>
+      <p>Web Dev, UI/UX, SEO, Google Ads, JS, HTML, CSS</p>
+    </section>
 
-      <div class="card" id="hobbies">
-        <img src="hobbies.png" alt="Hobbies">
-        <h2>Hobbies</h2>
-        <p>Regional blogging, influencer content, photography</p>
-      </div>
-    </div>
+    <section class="card" id="projects">
+      <img src="projects.png" alt="Projects" />
+      <h2>Projects</h2>
+      <p>Portfolio, SEO pages, ScapeTree frontend, etc.</p>
+    </section>
 
-    <!-- Creative Experience -->
-    <div id="creative" class="creative-section">
-      <h2 class="creative-title">Creative Experience</h2>
-      <div class="scroll-wrapper">
-        <div class="scroll-track">
-          <a href="project1.html"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
-          <a href="project2.html"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
-          <a href="project3.html"><img src="cw.jpg" alt="Creative Work 3" /></a>
-          <a href="project4.html"><img src="cw1.jpg" alt="Creative Work 4" /></a>
+    <section class="card" id="hobbies">
+      <img src="hobbies.png" alt="Hobbies" />
+      <h2>Hobbies</h2>
+      <p>Regional blogging, influencer content, photography</p>
+    </section>
 
-          <!-- Duplicate images for infinite loop effect -->
-          <a href="project1.html"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
-          <a href="project2.html"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
-          <a href="project3.html"><img src="cw.jpg" alt="Creative Work 3" /></a>
-          <a href="project4.html"><img src="cw1.jpg" alt="Creative Work 4" /></a>
-        </div>
+    <section class="card" id="contact">
+      <img src="contact.png" alt="Contact" />
+      <h2>Contact</h2>
+      <p>Email: jagadeeshmuthamsetty@gmail.com<br />
+         Phone: +447585685622<br />
+         LinkedIn: <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+    </section>
+  </div>
+
+  <!-- Creative Experience Scrolling -->
+  <div id="creative" class="creative-section">
+    <h2 class="creative-title">Creative Experience</h2>
+    <div class="scroll-wrapper" aria-label="Scrolling Creative Experience Images">
+      <div class="scroll-track">
+        <!-- 4 unique images -->
+        <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
+        <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
+        <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
+        <a href="project4.html" title="Creative Work 4"><img src="cw1.jpg" alt="Creative Work 4" /></a>
+
+        <!-- duplicate for seamless infinite scroll -->
+        <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
+        <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
+        <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
+        <a href="project4.html" title="Creative Work 4"><img src="cw1.jpg" alt="Creative Work 4" /></a>
       </div>
     </div>
   </div>
+
+</div>
+
 </body>
 </html>
