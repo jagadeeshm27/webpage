@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jagadeesh's Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jagadeesh Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
+      background: #f4f4f4;
       color: #333;
     }
 
@@ -18,8 +17,8 @@
       color: white;
       padding: 1rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -27,14 +26,14 @@
 
     header h1 {
       margin: 0;
+      font-size: 1.5rem;
     }
 
     nav a {
       color: white;
-      text-decoration: none;
       margin-left: 1.5rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -42,31 +41,26 @@
     }
 
     .main-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
-    }
-
-    .card-link {
-      text-decoration: none;
-      color: inherit;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: white;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      transition: box-shadow 0.3s ease;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
       cursor: pointer;
     }
 
     .card:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
     }
 
     .card img {
@@ -77,23 +71,20 @@
     }
 
     h2 {
-      margin-top: 0;
       color: #232f3e;
     }
 
+    /* Creative Experience Scrolling Section */
     .creative-experience {
       margin-top: 4rem;
-      padding: 2rem;
-      background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 2rem 1rem;
+      background-color: #fff4e6;
     }
 
     .creative-experience h2 {
-      margin-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #232f3e;
     }
 
     .scroll-container {
@@ -105,7 +96,7 @@
     .scroll-images {
       display: inline-block;
       white-space: nowrap;
-      animation: scrollLeft 20s linear infinite;
+      animation: scrollLeft 40s linear infinite;
     }
 
     .scroll-images img {
@@ -122,74 +113,87 @@
         transform: translateX(0%);
       }
       100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
       }
     }
 
-    @media (max-width: 768px) {
-      .main-content {
-        grid-template-columns: 1fr;
-      }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #232f3e;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Jagadeesh</h1>
     <nav>
-      <a href="#personal">Personal</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="personal.html">Personal</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <div class="main-content">
-    <a href="personal.html" class="card-link">
-      <div class="card" id="personal">
-        <img src="personal.png" alt="Personal Details" />
-        <h2>Personal Details</h2>
-        <p>Hi! I'm Jagadeesh, a passionate developer with interests in web technologies and AI.</p>
-      </div>
-    </a>
+    <div class="card" onclick="location.href='personal.html'">
+      <img src="personal.png" alt="Personal" />
+      <h2>Personal Details</h2>
+      <p>All about me and my background.</p>
+    </div>
 
-    <a href="skills.html" class="card-link">
-      <div class="card" id="skills">
-        <img src="skills.png" alt="Skills" />
-        <h2>Skills</h2>
-        <p>JavaScript, Python, HTML, CSS, React, Node.js, Git, Docker</p>
-      </div>
-    </a>
+    <div class="card" onclick="location.href='skills.html'">
+      <img src="skills.png" alt="Skills" />
+      <h2>Skills</h2>
+      <p>Web development, marketing, and more.</p>
+    </div>
 
-    <a href="projects.html" class="card-link">
-      <div class="card" id="projects">
-        <img src="projects.png" alt="Projects" />
-        <h2>Projects</h2>
-        <p>Portfolio website, Chatbot, E-commerce app, Blog platform</p>
-      </div>
-    </a>
+    <div class="card" onclick="location.href='projects.html'">
+      <img src="projects.png" alt="Projects" />
+      <h2>Projects</h2>
+      <p>What I've built and created.</p>
+    </div>
 
-    <a href="contact.html" class="card-link">
-      <div class="card" id="contact">
-        <img src="contact.png" alt="Contact" />
-        <h2>Contact</h2>
-        <p>Email: jagadeeshmuthamsetty@gmail.com<br />Phone: +44 07585685622</p>
-      </div>
-    </a>
+    <div class="card" onclick="location.href='hobbies.html'">
+      <img src="hobbies.png" alt="Hobbies" />
+      <h2>Hobbies</h2>
+      <p>My passions beyond tech.</p>
+    </div>
+
+    <div class="card" onclick="location.href='contact.html'">
+      <img src="contact.png" alt="Contact" />
+      <h2>Contact</h2>
+      <p>Let's connect and talk!</p>
+    </div>
   </div>
 
-  <!-- Creative Experience section with auto-scrolling images -->
+  <!-- Creative Experience Section -->
   <div class="creative-experience">
     <h2>Creative Experience</h2>
     <div class="scroll-container">
       <div class="scroll-images">
-        <img src="creative1.png" alt="Work 1" />
-        <img src="creative2.png" alt="Work 2" />
-        <img src="creative3.png" alt="Work 3" />
-        <img src="creative4.png" alt="Work 4" />
-        <img src="creative5.png" alt="Work 5" />
+        <img src="personal1.jpg" alt="Creative Work 1" />
+        <img src="personal2.jpg" alt="Creative Work 2" />
+        <img src="personal3.jpg" alt="Creative Work 3" />
+        <img src="personal4.jpg" alt="Creative Work 4" />
+        <img src="personal5.jpg" alt="Creative Work 5" />
+        <!-- Duplicated for infinite loop -->
+        <img src="personal1.jpg" alt="Creative Work 1" />
+        <img src="personal2.jpg" alt="Creative Work 2" />
+        <img src="personal3.jpg" alt="Creative Work 3" />
+        <img src="personal4.jpg" alt="Creative Work 4" />
+        <img src="personal5.jpg" alt="Creative Work 5" />
       </div>
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 Jagadeesh Muthamsetty. All rights reserved.
+  </footer>
+
 </body>
 </html>
