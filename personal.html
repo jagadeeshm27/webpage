@@ -3,99 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Personal Details - Jagadeesh</title>
+  <title>Jagadheesh Muthamsetty | Personal Info</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-
-    header {
-      background: #232f3e;
-      color: white;
-      padding: 1rem 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
+      color: #222;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
     }
-
-    h1 {
-      margin: 0;
-    }
-
     .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .profile-section {
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      max-width: 900px;
+      width: 100%;
       display: flex;
-      gap: 2rem;
-      align-items: center;
+      gap: 40px;
+      padding: 30px 40px;
+      animation: fadeIn 1s ease forwards;
     }
-
-    .profile-section img {
-      width: 200px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
-
-    .profile-info {
+    .photo {
       flex: 1;
+      max-width: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
-
+    .photo img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      font-size: 2.6rem;
+      color: #0077cc;
+      letter-spacing: 1.2px;
+    }
     h2 {
-      color: #232f3e;
-      margin-bottom: 0.5rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #004a99;
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 6px;
     }
-
     p {
+      margin: 0;
+      font-size: 1.1rem;
       line-height: 1.6;
+      color: #444;
     }
-
-    .contact-info {
-      margin-top: 1.5rem;
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 30px;
+      margin-top: 10px;
     }
-
-    .contact-info p {
-      margin: 0.5rem 0;
+    .language {
+      background: #e6f0fa;
+      border-radius: 24px;
+      padding: 8px 18px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0050b3;
+      box-shadow: 0 2px 8px rgba(0, 80, 179, 0.15);
+      cursor: default;
+      user-select: none;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+    .language:hover {
+      background-color: #c4d8fc;
+      color: #003d80;
+    }
+    .back-link {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0077cc;
+      text-decoration: none;
+      border: 2px solid #0077cc;
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      z-index: 100;
+    }
+    .back-link:hover {
+      background-color: #0077cc;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Personal Details</h1>
-  </header>
 
-  <div class="container">
-    <div class="profile-section">
-      <img src="personal.png" alt="Jagadeesh's Picture" />
-      <div class="profile-info">
-        <h2>Jagadeesh Muthamsetty</h2>
-        <p>
-          I'm a passionate front-end web developer based in Liverpool, UK. With experience in tech, startups, and digital marketing, I bring both creativity and structure to my work.
-        </p>
-        <p>
-          I love solving real-world problems through design and code. Whether it's building websites, managing digital content, or collaborating with creators — I do it with passion and focus.
-        </p>
-      </div>
+  <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
+
+  <div class="container" role="main" aria-labelledby="pageTitle">
+    <div class="photo" tabindex="0" aria-label="Photo of Jagadheesh Muthamsetty">
+      <img src="personal.png" alt="Jagadheesh Muthamsetty Photo" />
     </div>
-
-    <div class="contact-info">
-      <h2>Contact Information</h2>
-      <p><strong>Email:</strong> jagadeeshmuthamsetty@gmail.com</p>
-      <p><strong>Phone:</strong> +44 7585 685622</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b/?trk=opento_sprofile_goalscard" target="_blank">My Profile</a></p>
-      <p><strong>Address:</strong> Liverpool, United Kingdom</p>
+    <div class="info">
+      <h1 id="pageTitle">Jagadheesh Muthamsetty</h1>
+      <section aria-labelledby="aboutMeHeading">
+        <h2 id="aboutMeHeading">About Me</h2>
+        <p>I am a proactive and self-motivated front-end web developer with a strong background in digital marketing. I love building ideas and digital experiences that solve real problems and scale up rapidly.</p>
+      </section>
+      <section aria-labelledby="languagesHeading">
+        <h2 id="languagesHeading">Languages I Speak / Understand</h2>
+        <div class="languages" role="list" aria-label="Languages">
+          <div class="language" role="listitem" title="Fluent">English</div>
+          <div class="language" role="listitem" title="Fluent">Hindi</div>
+          <div class="language" role="listitem" title="Fluent">Telugu</div>
+          <div class="language" role="listitem" title="Learning to Speak">Kannada (Can Understand, Learning to Speak)</div>
+          <div class="language" role="listitem" title="Understands">Tamil</div>
+          <div class="language" role="listitem" title="Understands">Malayalam</div>
+        </div>
+      </section>
     </div>
   </div>
+
 </body>
 </html>
