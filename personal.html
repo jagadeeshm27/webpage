@@ -76,13 +76,13 @@
       line-height: 1.6;
       color: #444;
     }
-    .languages {
+    .languages, .achievements {
       display: flex;
       flex-wrap: wrap;
       gap: 15px 30px;
       margin-top: 10px;
     }
-    .language {
+    .language, .achievement-item {
       background: #e6f0fa;
       border-radius: 24px;
       padding: 8px 18px;
@@ -95,18 +95,9 @@
       position: relative;
       transition: background-color 0.3s ease;
     }
-    .language:hover {
+    .language:hover, .achievement-item:hover {
       background-color: #c4d8fc;
       color: #003d80;
-    }
-    .education-list {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-    .education-list li {
-      margin-bottom: 0.7rem;
-      font-size: 1.1rem;
-      color: #444;
     }
     .back-link {
       position: fixed;
@@ -138,17 +129,22 @@
     </div>
     <div class="info">
       <h1 id="pageTitle">Jagadheesh Muthamsetty</h1>
+      
       <section aria-labelledby="aboutMeHeading">
         <h2 id="aboutMeHeading">About Me</h2>
         <p>I am a proactive and self-motivated front-end web developer with a strong background in digital marketing. I love building ideas and digital experiences that solve real problems and scale up rapidly.</p>
       </section>
+
       <section aria-labelledby="educationHeading">
         <h2 id="educationHeading">Education</h2>
-        <ul class="education-list">
-          <li>Bachelor of Engineering in Computer Science, ABC University, 2018</li>
-          <li>Certification in Front-End Web Development, XYZ Institute, 2020</li>
-        </ul>
+        <p><strong>Master's Degree in Advanced Computer Science</strong><br />
+          University of Liverpool<br />
+          Focused on advanced algorithms, software engineering, and emerging technologies, equipping me with the skills to tackle complex computational challenges and innovate in the digital world.</p>
+        <p><strong>Bachelor's Degree in Computer Science</strong><br />
+          St Ann's College of Engineering and Technology, India<br />
+          During my bachelor’s, I led the branch’s cultural events and headed the cybersecurity group, earning the Best Event Manager award. This experience developed my leadership, organizational skills, and technical expertise.</p>
       </section>
+
       <section aria-labelledby="languagesHeading">
         <h2 id="languagesHeading">Languages I Speak / Understand</h2>
         <div class="languages" role="list" aria-label="Languages">
@@ -160,6 +156,16 @@
           <div class="language" role="listitem" title="Understands">Malayalam</div>
         </div>
       </section>
+
+      <section aria-labelledby="achievementsHeading">
+        <h2 id="achievementsHeading">Achievements</h2>
+        <div class="achievements" role="list" aria-label="Achievements">
+          <div class="achievement-item" role="listitem">Member of National Cadet Corps (NCC)</div>
+          <div class="achievement-item" role="listitem">Student of the Year</div>
+          <div class="achievement-item" role="listitem">Runner-up in zonal & district football, cricket & volleyball events in high school</div>
+        </div>
+      </section>
+
     </div>
   </div>
 
