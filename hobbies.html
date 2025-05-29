@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jagadheesh Muthamsetty | Hobbies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .photo {
+      flex: 1;
+      max-width: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .photo img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      font-size: 2.6rem;
+      color: #0077cc;
+      letter-spacing: 1.2px;
+    }
+    h2 {
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #004a99;
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 6px;
+    }
+    p {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+    .back-link {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0077cc;
+      text-decoration: none;
+      border: 2px solid #0077cc;
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      z-index: 100;
+    }
+    .back-link:hover {
+      background-color: #0077cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
+
+  <div class="container" role="main" aria-labelledby="pageTitle">
+    <div class="photo" tabindex="0" aria-label="Hobbies Image">
+      <img src="hobbies.png" alt="Hobbies Photo" />
+    </div>
+    <div class="info">
+      <h1 id="pageTitle">My Hobbies</h1>
+
+      <section aria-labelledby="hobbyIntro">
+        <h2 id="hobbyIntro">Passions Beyond Code</h2>
+        <p>Outside my professional life, I love exploring creative and expressive outlets that keep me inspired and balanced. These hobbies are a major part of who I am and fuel my energy in both life and work.</p>
+      </section>
+
+      <section aria-labelledby="hobbyList">
+        <h2 id="hobbyList">Some of My Favorite Hobbies</h2>
+        <ul>
+          <li>📷 Photography & Cinematic Short Video Creation</li>
+          <li>📝 Blogging in Telugu & Creating Regional Content</li>
+          <li>🎧 Music Mixing & Audio Editing</li>
+          <li>📱 Influencer & Content Strategy Development</li>
+          <li>🎮 Gaming & Competitive Strategy Games</li>
+          <li>🌍 Traveling & Discovering Local Cultures</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>
