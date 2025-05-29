@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #e0f2ff; /* light sky blue */
+      background: #87CEFA; /* Light Sky Blue background */
       color: #333;
     }
     header {
@@ -23,94 +23,87 @@
     header h1 {
       margin: 0;
       font-weight: 700;
-      font-size: 1.4rem;
     }
 
     /* Dropdown container */
     .dropdown {
       position: relative;
       display: inline-block;
-      cursor: pointer;
     }
-
-    /* Three dots style */
-    .dropdown-btn {
-      font-size: 1.8rem;
+    .dropbtn {
+      background: none;
+      border: none;
       color: white;
+      font-size: 2rem;
+      cursor: pointer;
       user-select: none;
-      padding: 5px 10px;
     }
-
-    /* Dropdown content (hidden by default) */
     .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
-      background-color: #fff;
+      background-color: #232f3e;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      z-index: 10;
-      border-radius: 6px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
       overflow: hidden;
     }
-
-    /* Dropdown links */
     .dropdown-content a {
-      color: #232f3e;
+      color: white;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
       font-weight: 600;
-      transition: background-color 0.2s;
+      font-size: 1rem;
     }
-
     .dropdown-content a:hover {
-      background-color: #e0f2ff;
+      background-color: #1a2433;
     }
-
-    /* Show dropdown on click */
-    .dropdown.show .dropdown-content {
+    .dropdown:hover .dropdown-content {
       display: block;
     }
 
+    /* Grid container for blocks */
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 2rem 1rem;
     }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* 3 blocks per row */
-      gap: 20px;
+      gap: 30px;
       margin-bottom: 60px;
     }
-
     .card {
       background: white;
-      border-radius: 12px;
-      padding: 1rem;
+      border-radius: 15px;
+      padding: 2rem;
       text-align: center;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
       cursor: pointer;
       user-select: none;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 0.8rem;
-      border-radius: 12px;
-    }
-    .card h2 {
-      margin: 0;
       font-weight: 700;
       font-size: 1.2rem;
       color: #232f3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 1.2rem;
+      pointer-events: none; /* So click works on whole card */
       user-select: none;
     }
 
@@ -131,6 +124,9 @@
       overflow: hidden;
       position: relative;
       height: 200px;
+      border-radius: 15px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+      background: white;
     }
 
     .scroll-track {
@@ -142,6 +138,7 @@
     .scroll-track a {
       flex: 0 0 200px;
       margin-right: 20px;
+      user-select: none;
     }
 
     .scroll-track img {
@@ -151,6 +148,7 @@
       cursor: pointer;
       object-fit: cover;
       transition: transform 0.2s;
+      user-select: none;
     }
     .scroll-track img:hover {
       transform: scale(1.05);
@@ -164,84 +162,56 @@
         transform: translateX(calc(-50%));
       }
     }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .scroll-track a {
-        flex: 0 0 150px;
-        margin-right: 15px;
-      }
-      .scroll-track img {
-        width: 150px;
-        height: 135px;
-      }
-    }
-    @media (max-width: 600px) {
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .dropdown-content {
-        right: auto;
-        left: 0;
-      }
-    }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Jagadheesh Muthamsetty</h1>
-  <div class="dropdown" id="dropdownMenu">
-    <div class="dropdown-btn" aria-label="Open menu" tabindex="0">&#8942;</div>
-    <div class="dropdown-content" role="menu" aria-hidden="true">
-      <a href="#personal" role="menuitem">Personal</a>
-      <a href="#skills" role="menuitem">Skills</a>
-      <a href="#projects" role="menuitem">Projects</a>
-      <a href="#experience" role="menuitem">Experience</a>
-      <a href="#hobbies" role="menuitem">Hobbies</a>
-      <a href="#contact" role="menuitem">Contact</a>
+  <div class="dropdown">
+    <button class="dropbtn">&#8942;</button>
+    <div class="dropdown-content">
+      <a href="#personal">Personal Info</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </header>
 
 <div class="container">
 
-  <div class="card-grid" role="main">
-    <section class="card" id="personal" tabindex="0" onclick="location.href='personal.html'">
+  <div class="card-grid">
+    <section class="card" id="personal" onclick="window.location.href='personal.html'">
       <img src="personal.png" alt="Personal Info" />
-      <h2>Personal</h2>
+      <div>Personal Info</div>
     </section>
 
-    <section class="card" id="skills" tabindex="0" onclick="location.href='skills.html'">
+    <section class="card" id="skills" onclick="window.location.href='skills.html'">
       <img src="skills.png" alt="Skills" />
-      <h2>Skills</h2>
+      <div>Skills</div>
     </section>
 
-    <section class="card" id="projects" tabindex="0" onclick="location.href='projects.html'">
+    <section class="card" id="projects" onclick="window.location.href='projects.html'">
       <img src="projects.png" alt="Projects" />
-      <h2>Projects</h2>
+      <div>Projects</div>
     </section>
 
-    <section class="card" id="experience" tabindex="0" onclick="location.href='experience.html'">
+    <section class="card" id="experience" onclick="window.location.href='experience.html'">
       <img src="experience.png" alt="Experience" />
-      <h2>Experience</h2>
+      <div>Experience</div>
     </section>
 
-    <section class="card" id="hobbies" tabindex="0" onclick="location.href='hobbies.html'">
+    <section class="card" id="hobbies" onclick="window.location.href='hobbies.html'">
       <img src="hobbies.png" alt="Hobbies" />
-      <h2>Hobbies</h2>
+      <div>Hobbies</div>
     </section>
 
-    <section class="card" id="contact" tabindex="0" onclick="location.href='contact.html'">
+    <section class="card" id="contact" onclick="window.location.href='contact.html'">
       <img src="contact.png" alt="Contact" />
-      <h2>Contact</h2>
+      <div>Contact</div>
     </section>
   </div>
 
@@ -250,13 +220,12 @@
     <h2 class="creative-title">Creative Experience</h2>
     <div class="scroll-wrapper" aria-label="Scrolling Creative Experience Images">
       <div class="scroll-track">
-        <!-- 4 unique images -->
+        <!-- 4 unique images duplicated for infinite scroll -->
         <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
         <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
         <a href="project4.html" title="Creative Work 4"><img src="cw1.jpg" alt="Creative Work 4" /></a>
 
-        <!-- duplicate for seamless infinite scroll -->
         <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
         <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
@@ -266,36 +235,6 @@
   </div>
 
 </div>
-
-<script>
-  // Dropdown toggle logic
-  const dropdown = document.getElementById('dropdownMenu');
-  const btn = dropdown.querySelector('.dropdown-btn');
-  const menu = dropdown.querySelector('.dropdown-content');
-
-  btn.addEventListener('click', () => {
-    dropdown.classList.toggle('show');
-    // Toggle aria-hidden attribute for accessibility
-    const isVisible = menu.style.display === 'block' || menu.classList.contains('show');
-    menu.setAttribute('aria-hidden', !isVisible);
-  });
-
-  // Close dropdown when clicking outside
-  window.addEventListener('click', e => {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove('show');
-      menu.setAttribute('aria-hidden', 'true');
-    }
-  });
-
-  // Allow keyboard accessibility for dropdown button
-  btn.addEventListener('keydown', e => {
-    if(e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      btn.click();
-    }
-  });
-</script>
 
 </body>
 </html>
