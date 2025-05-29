@@ -36,8 +36,8 @@
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns always */
+      gap: 30px;
       margin-bottom: 60px;
     }
 
@@ -62,7 +62,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Creative Experience Section */
+    /* Creative Experience */
     .creative-section {
       margin-top: 60px;
     }
@@ -118,6 +118,12 @@
       padding: 1rem;
       background: #eee;
     }
+
+    @media screen and (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -169,10 +175,7 @@
     <a href="contact.html" class="card">
       <img src="contact.png" alt="Contact" />
       <h2>Contact</h2>
-      <p>Email: jagadeeshmuthamsetty@gmail.com<br />
-         Phone: +447585685622<br />
-         <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b" style="color:#0066cc;" target="_blank">LinkedIn</a>
-      </p>
+      <p>Click to view contact info</p>
     </a>
   </div>
 
@@ -181,7 +184,7 @@
     <h2 class="creative-title">Creative Experience</h2>
     <div class="scroll-wrapper">
       <div class="scroll-track">
-        <!-- 4 unique + repeated for seamless infinite scroll -->
+        <!-- 4 unique + repeated for infinite scroll -->
         <a href="project1.html"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
         <a href="project2.html"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html"><img src="cw.jpg" alt="Creative Work 3" /></a>
