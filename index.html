@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jagadeesh | Portfolio</title>
+  <title>Jagadheesh Muthamsetty | Portfolio</title>
   <style>
-    /* === Global Styles === */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #d6f0ff; /* light sky blue */
+      background: #e0f2ff; /* light sky blue */
       color: #333;
     }
     header {
@@ -19,114 +18,142 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: relative;
     }
-    nav a {
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* Three dots style */
+    .dropdown-btn {
+      font-size: 1.8rem;
       color: white;
+      user-select: none;
+      padding: 5px 10px;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 10;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* Dropdown links */
+    .dropdown-content a {
+      color: #232f3e;
+      padding: 12px 16px;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-      transition: color 0.3s ease;
+      display: block;
+      font-weight: 600;
+      transition: background-color 0.2s;
     }
-    nav a:hover {
-      color: #80c7ff;
+
+    .dropdown-content a:hover {
+      background-color: #e0f2ff;
     }
+
+    /* Show dropdown on click */
+    .dropdown.show .dropdown-content {
+      display: block;
+    }
+
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 2rem 1rem 4rem 1rem;
+      padding: 2rem 1rem;
     }
 
-    /* === Card Grid === */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
-      gap: 30px;
+      grid-template-columns: repeat(3, 1fr); /* 3 blocks per row */
+      gap: 20px;
       margin-bottom: 60px;
     }
+
     .card {
       background: white;
       border-radius: 12px;
-      padding: 1.5rem 1rem;
+      padding: 1rem;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s;
       cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    }
-    .card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border-radius: 10px;
       user-select: none;
     }
-    .card h2 {
-      margin: 0.5rem 0 0.8rem 0;
-      font-size: 1.4rem;
+    .card:hover {
+      transform: translateY(-5px);
     }
-    .card p {
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.4;
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 0.8rem;
+      border-radius: 12px;
+    }
+    .card h2 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #232f3e;
+      user-select: none;
     }
 
-    /* === Creative Experience Section === */
+    /* Creative Experience Section */
     .creative-section {
       margin-top: 50px;
     }
     .creative-title {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 1.6rem;
       text-align: center;
-      margin-bottom: 25px;
-      color: #1a3a5a;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #232f3e;
     }
 
     .scroll-wrapper {
       width: 100%;
       overflow: hidden;
       position: relative;
-      height: 210px;
-      border-radius: 12px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-      background: white;
+      height: 200px;
     }
 
     .scroll-track {
       display: flex;
-      width: calc(8 * 220px); /* 8 images total (4 unique x 2) */
+      width: calc(8 * 220px);
       animation: scroll-left 20s linear infinite;
     }
 
     .scroll-track a {
       flex: 0 0 200px;
       margin-right: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-      transition: transform 0.3s ease;
-      display: block;
-    }
-    .scroll-track a:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.18);
     }
 
     .scroll-track img {
-      width: 100%;
+      width: 200px;
       height: 180px;
+      border-radius: 10px;
+      cursor: pointer;
       object-fit: cover;
-      display: block;
-      pointer-events: none; /* so the entire <a> is clickable */
-      user-select: none;
+      transition: transform 0.2s;
+    }
+    .scroll-track img:hover {
+      transform: scale(1.05);
     }
 
     @keyframes scroll-left {
@@ -138,20 +165,18 @@
       }
     }
 
-    /* === Responsive === */
+    /* Responsive */
     @media (max-width: 900px) {
       .card-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-      .scroll-wrapper {
-        height: 170px;
       }
       .scroll-track a {
         flex: 0 0 150px;
         margin-right: 15px;
       }
       .scroll-track img {
-        height: 130px;
+        width: 150px;
+        height: 135px;
       }
     }
     @media (max-width: 600px) {
@@ -162,13 +187,9 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      nav {
-        margin-top: 10px;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 15px;
-        display: inline-block;
+      .dropdown-content {
+        right: auto;
+        left: 0;
       }
     }
   </style>
@@ -176,59 +197,56 @@
 <body>
 
 <header>
-  <h1>Jagadeesh</h1>
-  <nav>
-    <a href="personal.html">Personal</a>
-    <a href="skills.html">Skills</a>
-    <a href="projects.html">Projects</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a href="contact.html">Contact</a>
-    <a href="experience.html">Experience</a>
-  </nav>
+  <h1>Jagadheesh Muthamsetty</h1>
+  <div class="dropdown" id="dropdownMenu">
+    <div class="dropdown-btn" aria-label="Open menu" tabindex="0">&#8942;</div>
+    <div class="dropdown-content" role="menu" aria-hidden="true">
+      <a href="#personal" role="menuitem">Personal</a>
+      <a href="#skills" role="menuitem">Skills</a>
+      <a href="#projects" role="menuitem">Projects</a>
+      <a href="#experience" role="menuitem">Experience</a>
+      <a href="#hobbies" role="menuitem">Hobbies</a>
+      <a href="#contact" role="menuitem">Contact</a>
+    </div>
+  </div>
 </header>
 
 <div class="container">
 
-  <div class="card-grid">
-    <section class="card" onclick="location.href='personal.html';" role="button" tabindex="0">
-      <img src="personal.png" alt="Personal" />
+  <div class="card-grid" role="main">
+    <section class="card" id="personal" tabindex="0" onclick="location.href='personal.html'">
+      <img src="personal.png" alt="Personal Info" />
       <h2>Personal</h2>
-      <p>From Liverpool, love building ideas & digital experiences.</p>
     </section>
 
-    <section class="card" onclick="location.href='skills.html';" role="button" tabindex="0">
+    <section class="card" id="skills" tabindex="0" onclick="location.href='skills.html'">
       <img src="skills.png" alt="Skills" />
       <h2>Skills</h2>
-      <p>Web Dev, UI/UX, SEO, Google Ads, JS, HTML, CSS</p>
     </section>
 
-    <section class="card" onclick="location.href='projects.html';" role="button" tabindex="0">
+    <section class="card" id="projects" tabindex="0" onclick="location.href='projects.html'">
       <img src="projects.png" alt="Projects" />
       <h2>Projects</h2>
-      <p>Portfolio, SEO pages, ScapeTree frontend, etc.</p>
     </section>
 
-    <section class="card" onclick="location.href='hobbies.html';" role="button" tabindex="0">
-      <img src="hobbies.png" alt="Hobbies" />
-      <h2>Hobbies</h2>
-      <p>Regional blogging, influencer content, photography</p>
-    </section>
-
-    <section class="card" onclick="location.href='contact.html';" role="button" tabindex="0">
-      <img src="contact.png" alt="Contact" />
-      <h2>Contact</h2>
-      <p>Get in touch with me via email or LinkedIn.</p>
-    </section>
-
-    <section class="card" onclick="location.href='experience.html';" role="button" tabindex="0">
+    <section class="card" id="experience" tabindex="0" onclick="location.href='experience.html'">
       <img src="experience.png" alt="Experience" />
       <h2>Experience</h2>
-      <p>Explore my professional and creative journey.</p>
+    </section>
+
+    <section class="card" id="hobbies" tabindex="0" onclick="location.href='hobbies.html'">
+      <img src="hobbies.png" alt="Hobbies" />
+      <h2>Hobbies</h2>
+    </section>
+
+    <section class="card" id="contact" tabindex="0" onclick="location.href='contact.html'">
+      <img src="contact.png" alt="Contact" />
+      <h2>Contact</h2>
     </section>
   </div>
 
   <!-- Creative Experience Scrolling -->
-  <div id="creative" class="creative-section" aria-label="Creative Experience">
+  <div id="creative" class="creative-section">
     <h2 class="creative-title">Creative Experience</h2>
     <div class="scroll-wrapper" aria-label="Scrolling Creative Experience Images">
       <div class="scroll-track">
@@ -248,6 +266,36 @@
   </div>
 
 </div>
+
+<script>
+  // Dropdown toggle logic
+  const dropdown = document.getElementById('dropdownMenu');
+  const btn = dropdown.querySelector('.dropdown-btn');
+  const menu = dropdown.querySelector('.dropdown-content');
+
+  btn.addEventListener('click', () => {
+    dropdown.classList.toggle('show');
+    // Toggle aria-hidden attribute for accessibility
+    const isVisible = menu.style.display === 'block' || menu.classList.contains('show');
+    menu.setAttribute('aria-hidden', !isVisible);
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', e => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Allow keyboard accessibility for dropdown button
+  btn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
+</script>
 
 </body>
 </html>
