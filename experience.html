@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jagadheesh Muthamsetty | Projects</title>
+  <title>Jagadheesh Muthamsetty | Experience</title>
   <style>
     body {
       margin: 0;
@@ -16,10 +16,11 @@
       min-height: 100vh;
       padding: 40px 20px;
     }
+
     .container {
       background: white;
       border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
       max-width: 900px;
       width: 100%;
       display: flex;
@@ -27,35 +28,47 @@
       padding: 30px 40px;
       animation: fadeIn 1s ease forwards;
     }
+
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .photo {
       flex: 1;
       max-width: 280px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
+
     .photo img {
       width: 100%;
       display: block;
       height: auto;
     }
+
     .photo:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
+
     .info {
       flex: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 30px;
+      gap: 25px;
     }
+
     h1 {
       margin: 0 0 8px 0;
       font-weight: 700;
@@ -63,6 +76,7 @@
       color: #0077cc;
       letter-spacing: 1.2px;
     }
+
     h2 {
       margin-bottom: 12px;
       font-weight: 600;
@@ -70,19 +84,28 @@
       border-bottom: 2px solid #0077cc;
       padding-bottom: 6px;
     }
-    p {
-      font-size: 1.1rem;
+
+    .experience-item {
+      margin-bottom: 20px;
+    }
+
+    .experience-item h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #0077cc;
+    }
+
+    .experience-item span {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .experience-item p {
+      margin-top: 8px;
+      font-size: 1.05rem;
       color: #444;
-      line-height: 1.6;
     }
-    .placeholder {
-      background-color: #f0f8ff;
-      padding: 20px;
-      border-radius: 12px;
-      border-left: 6px solid #0077cc;
-      font-style: italic;
-      color: #333;
-    }
+
     .back-link {
       position: fixed;
       top: 20px;
@@ -97,6 +120,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       z-index: 100;
     }
+
     .back-link:hover {
       background-color: #0077cc;
       color: white;
@@ -108,18 +132,30 @@
   <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
 
   <div class="container" role="main" aria-labelledby="pageTitle">
-    <div class="photo" tabindex="0" aria-label="Project showcase image">
-      <img src="projects.png" alt="Projects Illustration" />
+    <div class="photo" tabindex="0" aria-label="Experience Image">
+      <img src="experience.png" alt="Work Experience Image" />
     </div>
     <div class="info">
-      <h1 id="pageTitle">Projects</h1>
-      <section aria-labelledby="projectsHeading">
-        <h2 id="projectsHeading">My Work</h2>
-        <div class="placeholder">
-          🚧 Project details coming soon...  
-          <br />You can showcase your portfolio, code repositories, and innovations here.
-        </div>
-      </section>
+      <h1 id="pageTitle">Professional Experience</h1>
+
+      <div class="experience-item">
+        <h3>Web Developer Intern – XYZ Agency</h3>
+        <span>Jan 2023 – Jun 2023 | Remote</span>
+        <p>Worked on modern front-end frameworks to build dynamic landing pages and business websites. Collaborated with the design team to optimize UI/UX and responsive behavior across browsers.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Digital Marketing Executive – Freelance</h3>
+        <span>2021 – 2022</span>
+        <p>Handled SEO, content strategy, and social media for small businesses. Delivered successful campaigns using analytics tools and improved search engine visibility.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Tech Head – Cybersecurity Club, St Ann's College</h3>
+        <span>2019 – 2021</span>
+        <p>Organized workshops and sessions on ethical hacking and cybersecurity awareness. Led a team of students and collaborated with faculty and external trainers.</p>
+      </div>
+
     </div>
   </div>
 
