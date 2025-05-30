@@ -14,20 +14,32 @@
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
+      min-height: 100vh;
     }
 
-    a.back-link {
+    /* Top right button container */
+    .top-right {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .top-right a {
       display: inline-block;
-      margin-bottom: 30px;
       font-weight: 700;
       text-decoration: none;
       color: #232f3e;
       border: 2px solid #232f3e;
-      padding: 8px 15px;
-      border-radius: 15px;
+      padding: 8px 20px;
+      border-radius: 30px;
+      background: white;
       transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
+      user-select: none;
+      cursor: pointer;
     }
-    a.back-link:hover {
+    .top-right a:hover {
       background-color: #232f3e;
       color: white;
     }
@@ -35,8 +47,20 @@
     h1 {
       font-weight: 700;
       font-size: 2.8rem;
-      margin-bottom: 20px;
-      text-align: center;
+      margin-bottom: 30px;
+      color: #232f3e;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    h1 img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      user-select: none;
+      pointer-events: none;
     }
 
     section {
@@ -72,9 +96,14 @@
 </head>
 <body>
 
-  <a href="index.html" class="back-link" aria-label="Back to Portfolio">← Back to Portfolio</a>
+  <div class="top-right">
+    <a href="index.html" aria-label="Back to Portfolio">Home</a>
+  </div>
 
-  <h1>Phanumantu YouTube Channel</h1>
+  <h1>
+    <img src="phanumantu.png" alt="Phanumantu YouTube Channel Logo" />
+    Phanumantu YouTube Channel
+  </h1>
 
   <section aria-labelledby="summary">
     <h2 id="summary">Project Summary</h2>
