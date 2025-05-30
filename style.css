@@ -1,0 +1,212 @@
+/* Base styles: Desktop (Computer) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
+  color: #222;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  padding: 30px 40px;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.image-side, .project-image, .photo {
+  flex: 1;
+  max-width: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.image-side img, .project-image img, .photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-side:hover, .project-image:hover, .photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.content-side, .info, .project-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+h1, h2 {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  color: #0077cc;
+  letter-spacing: 1.2px;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.project-block {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0077cc;
+  background: #e6f0fa;
+  border: 2px solid #0077cc;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+/* Tablet Styles (width between 600px and 900px) */
+@media (max-width: 900px) and (min-width: 600px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    max-width: 700px;
+    padding: 25px 30px;
+  }
+
+  .image-side, .project-image, .photo {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .content-side, .info, .project-details {
+    flex: none;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .project-block {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .buttons {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile Styles (width below 600px) */
+@media (max-width: 599px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 20px 15px;
+    gap: 25px;
+  }
+
+  .image-side, .project-image, .photo {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .content-side, .info, .project-details {
+    flex: none;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .project-block {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
