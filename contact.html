@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jagadheesh Muthamsetty | Contact</title>
   <style>
-      body {
+    body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
@@ -92,6 +92,23 @@
       font-weight: 600;
       color: #0055aa;
     }
+    /* Make links stand out and clickable */
+    .contact-link {
+      color: #0077cc;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+    /* Copy confirmation message */
+    #copyMessage {
+      margin-top: 10px;
+      font-weight: 700;
+      color: green;
+      display: none;
+    }
     .back-link {
       position: fixed;
       top: 20px;
@@ -126,11 +143,27 @@
       <section aria-labelledby="reachOut">
         <h2 id="reachOut">Contact Info</h2>
         <div class="contact-info">
-          <div class="contact-item"><span>📞 Phone:</span> +44 07585685622</div>
-          <div class="contact-item"><span>📧 Email:</span> jagadeeshmuthamsetty@gmail.com</div>
-          <div class="contact-item"><span>🌐 LinkedIn:</span> https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b/</div>
-          <div class="contact-item"><span>📍 Location:</span> UK/All over world (Remote Friendly)</div>
+          <div class="contact-item">
+            <span>📞 Phone:</span> 
+            <a href="#" id="phone-link" class="contact-link" aria-label="Click to copy phone number">+44 07585685622</a>
+          </div>
+          <div class="contact-item">
+            <span>📧 Email:</span> 
+            <a href="mailto:jagadeeshmuthamsetty@gmail.com" class="contact-link" aria-label="Send email to jagadeeshmuthamsetty@gmail.com">
+              jagadeeshmuthamsetty@gmail.com
+            </a>
+          </div>
+          <div class="contact-item">
+            <span>🌐 LinkedIn:</span> 
+            <a href="https://www.linkedin.com/in/jagadeesh-muthamsetty-9a36b929b/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Open LinkedIn profile in new tab">
+              linkedin.com/in/jagadeesh-muthamsetty-9a36b929b
+            </a>
+          </div>
+          <div class="contact-item">
+            <span>📍 Location:</span> UK/All over world (Remote Friendly)
+          </div>
         </div>
+        <div id="copyMessage" role="alert" aria-live="assertive">Phone number copied to clipboard!</div>
       </section>
 
       <section aria-labelledby="contactNote">
@@ -139,6 +172,24 @@
       </section>
     </div>
   </div>
+
+<script>
+  const phoneLink = document.getElementById('phone-link');
+  const copyMessage = document.getElementById('copyMessage');
+
+  phoneLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    const phoneNumber = '+44 07585685622';
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      copyMessage.style.display = 'block';
+      setTimeout(() => {
+        copyMessage.style.display = 'none';
+      }, 2000);
+    }).catch(() => {
+      alert('Failed to copy phone number. Please copy manually.');
+    });
+  });
+</script>
 
 </body>
 </html>
