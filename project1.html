@@ -3,56 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phanumantu YouTuber | Jagadheesh Muthamsetty</title>
+  <title>Phanumantu YouTuber</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #87CEFA; /* Light Sky Blue */
+      font-family: Arial, sans-serif;
+      background: #87CEFA; /* Light Sky Blue background */
       color: #232f3e;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-    .container {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      margin: 0;
+      padding: 20px;
       max-width: 900px;
-      width: 100%;
-      padding: 30px 40px;
-      animation: fadeIn 1s ease forwards;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      min-height: 100vh;
     }
 
-    /* Top right button container */
-    .top-right {
+    /* Home button on top right */
+    .back-link {
       position: fixed;
       top: 20px;
       right: 30px;
-      z-index: 100;
-    }
-    .top-right a {
-      display: inline-block;
       font-weight: 700;
+      font-size: 1.1rem;
+      color: #0077cc;
       text-decoration: none;
-      color: #232f3e;
-      border: 2px solid #232f3e;
-      padding: 8px 20px;
+      border: 2px solid #0077cc;
+      padding: 8px 15px;
       border-radius: 30px;
       background: white;
       transition: background-color 0.3s ease, color 0.3s ease;
-      font-size: 1rem;
+      z-index: 100;
       user-select: none;
       cursor: pointer;
     }
-    .top-right a:hover {
-      background-color: #232f3e;
+    .back-link:hover {
+      background-color: #0077cc;
       color: white;
     }
 
@@ -76,11 +61,11 @@
     }
 
     section {
-      border-radius: 12px;
-      padding: 20px 25px;
+      background: white;
+      border-radius: 15px;
+      padding: 25px 30px;
       margin-bottom: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      background: #f9fbfd;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     }
 
     section h2 {
@@ -89,13 +74,12 @@
       margin-bottom: 15px;
       border-bottom: 3px solid #232f3e;
       padding-bottom: 6px;
-      color: #232f3e;
     }
 
     .role-name {
       font-weight: 700;
-      font-size: 1.3rem;
-      margin-bottom: 12px;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
       color: #232f3e;
     }
 
@@ -104,49 +88,44 @@
       font-size: 1.1rem;
       color: #232f3e;
       line-height: 1.5;
-      margin: 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-right">
-    <a href="index.html" aria-label="Back to Portfolio">Home</a>
-  </div>
+  <a href="index.html" aria-label="Back to Portfolio" class="back-link">Home</a>
 
-  <div class="container" role="main" aria-labelledby="pageTitle">
-    <h1 id="pageTitle">
-      <img src="phanumantu.png" alt="Phanumantu YouTube Channel Logo" />
-      Phanumantu YouTuber
-    </h1>
+  <h1>
+    <img src="phanumantu.png" alt="Phanumantu YouTube Channel Logo" />
+    Phanumantu YouTuber
+  </h1>
 
-    <section aria-labelledby="summary">
-      <h2 id="summary">Project Summary</h2>
-      <p>
-        For over 2 years, I worked closely with the Phanumantu YouTube channel as both a Content Manager and Video Editor. 
-        I was responsible for strategizing content release schedules, editing and enhancing videos, and designing engaging thumbnails 
-        that helped grow the channel's audience and improve viewer retention.
-      </p>
-    </section>
+  <section aria-labelledby="summary">
+    <h2 id="summary">Project Summary</h2>
+    <p>
+      For over 2 years, I worked closely with the Phanumantu YouTube channel as both a Content Manager and Video Editor. 
+      I was responsible for strategizing content release schedules, editing and enhancing videos, and designing engaging thumbnails 
+      that helped grow the channel's audience and improve viewer retention.
+    </p>
+  </section>
 
-    <section aria-labelledby="editor-role">
-      <h2 id="editor-role">Video Editor Role</h2>
-      <div class="role-name">Jagadheesh Muthamsetty</div>
-      <p>
-        Edited raw footage into polished videos, added motion graphics, audio adjustments, and ensured consistent visual style across all uploads. 
-        Focused on quality and engaging storytelling to boost viewer engagement.
-      </p>
-    </section>
+  <section aria-labelledby="editor-role">
+    <h2 id="editor-role">Video Editor Role</h2>
+    <div class="role-name">Jagadheesh Muthamsetty</div>
+    <p>
+      Edited raw footage into polished videos, added motion graphics, audio adjustments, and ensured consistent visual style across all uploads. 
+      Focused on quality and engaging storytelling to boost viewer engagement.
+    </p>
+  </section>
 
-    <section aria-labelledby="content-manager-role">
-      <h2 id="content-manager-role">Content Manager Role</h2>
-      <div class="role-name">Jagadheesh Muthamsetty</div>
-      <p>
-        Planned and managed content schedules, optimized video titles and descriptions for search, monitored audience engagement and feedback, 
-        and coordinated with collaborators to maintain consistent growth.
-      </p>
-    </section>
-  </div>
+  <section aria-labelledby="content-manager-role">
+    <h2 id="content-manager-role">Content Manager Role</h2>
+    <div class="role-name">Jagadheesh Muthamsetty</div>
+    <p>
+      Planned and managed content schedules, optimized video titles and descriptions for search, monitored audience engagement and feedback, 
+      and coordinated with collaborators to maintain consistent growth.
+    </p>
+  </section>
 
 </body>
 </html>
