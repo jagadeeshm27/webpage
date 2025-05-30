@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #87CEFA; /* Light Sky Blue background */
+      background: #87CEFA;
       color: #333;
       transition: background-color 0.3s, color 0.3s;
     }
@@ -30,8 +30,6 @@
       font-weight: 700;
       font-size: 1.8rem;
     }
-
-    /* Dropdown container */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -72,8 +70,6 @@
     .dropdown:focus-within .dropdown-content {
       display: block;
     }
-
-    /* Grid container for blocks */
     .container {
       max-width: 1200px;
       margin: auto;
@@ -115,12 +111,10 @@
       height: 120px;
       object-fit: cover;
       margin-bottom: 1.2rem;
-      pointer-events: none; /* So click works on whole card */
+      pointer-events: none;
       user-select: none;
       border-radius: 12px;
     }
-
-    /* Creative Experience Section */
     .creative-section {
       margin-top: 50px;
     }
@@ -131,7 +125,6 @@
       font-weight: 700;
       color: #232f3e;
     }
-
     .scroll-wrapper {
       width: 100%;
       overflow: hidden;
@@ -141,7 +134,6 @@
       box-shadow: 0 5px 12px rgba(0,0,0,0.15);
       background: white;
     }
-
     body.dark .card,
     body.dark .scroll-wrapper {
       background: #1e1e1e;
@@ -159,19 +151,16 @@
     body.dark .dropdown-content a:focus {
       background-color: #374151;
     }
-
     .scroll-track {
       display: flex;
       width: calc(8 * 220px);
       animation: scroll-left 20s linear infinite;
     }
-
     .scroll-track a {
       flex: 0 0 200px;
       margin-right: 20px;
       user-select: none;
     }
-
     .scroll-track img {
       width: 200px;
       height: 180px;
@@ -186,19 +175,24 @@
       transform: scale(1.05);
       outline: none;
     }
-
     @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50%)); }
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.2rem;
       }
-      100% {
-        transform: translateX(calc(-50%));
+      .dropbtn {
+        font-size: 1.5rem;
+      }
+      #dark-mode-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
       }
     }
   </style>
-  <!-- Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- Your custom dark mode CSS -->
   <link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
@@ -211,17 +205,11 @@
   const toggleButton = document.getElementById('dark-mode-toggle');
   toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    if (document.body.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
   });
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
   }
-
-  // Make cards keyboard accessible (Enter key triggers click)
   document.querySelectorAll('.card').forEach(card => {
     card.setAttribute('tabindex', '0');
     card.addEventListener('keydown', e => {
@@ -249,50 +237,40 @@
 </header>
 
 <main class="container">
-
   <div class="card-grid" role="list">
     <section class="card" id="personal" role="listitem" onclick="window.location.href='personal.html'" aria-label="Go to Personal Info page">
       <img src="personal.png" alt="Personal Info" />
       <div>Personal Info</div>
     </section>
-
     <section class="card" id="skills" role="listitem" onclick="window.location.href='skills.html'" aria-label="Go to Skills page">
       <img src="skills.png" alt="Skills" />
       <div>Skills</div>
     </section>
-
     <section class="card" id="projects" role="listitem" onclick="window.location.href='projects.html'" aria-label="Go to Projects page">
       <img src="projects.png" alt="Projects" />
       <div>Projects</div>
     </section>
-
     <section class="card" id="experience" role="listitem" onclick="window.location.href='experience.html'" aria-label="Go to Experience page">
       <img src="experience.png" alt="Experience" />
       <div>Experience</div>
     </section>
-
     <section class="card" id="hobbies" role="listitem" onclick="window.location.href='hobbies.html'" aria-label="Go to Hobbies page">
       <img src="hobbies.png" alt="Hobbies" />
       <div>Hobbies</div>
     </section>
-
     <section class="card" id="contact" role="listitem" onclick="window.location.href='contact.html'" aria-label="Go to Contact page">
       <img src="contact.png" alt="Contact" />
       <div>Contact</div>
     </section>
   </div>
-
-  <!-- Creative Experience Scrolling -->
   <section id="creative" class="creative-section" aria-label="Creative Experience">
     <h2 class="creative-title">Creative Experience</h2>
     <div class="scroll-wrapper" aria-live="polite" aria-atomic="true" aria-label="Scrolling Creative Experience Images">
       <div class="scroll-track">
-        <!-- 4 unique images duplicated for infinite scroll -->
         <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
         <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
         <a href="project4.html" title="Creative Work 4"><img src="cw1.jpg" alt="Creative Work 4" /></a>
-
         <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
         <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
@@ -300,7 +278,6 @@
       </div>
     </div>
   </section>
-
 </main>
 
 </body>
