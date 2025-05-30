@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jagadheesh Muthamsetty | Contact</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Your custom dark mode CSS -->
+  <link href="darkmode.css" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
@@ -15,6 +21,7 @@
       align-items: flex-start;
       min-height: 100vh;
       padding: 40px 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     .container {
       background: white;
@@ -26,6 +33,7 @@
       gap: 40px;
       padding: 30px 40px;
       animation: fadeIn 1s ease forwards;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(20px);}
@@ -62,6 +70,7 @@
       font-size: 2.6rem;
       color: #0077cc;
       letter-spacing: 1.2px;
+      transition: color 0.3s ease;
     }
     h2 {
       margin-bottom: 12px;
@@ -69,12 +78,14 @@
       color: #004a99;
       border-bottom: 2px solid #0077cc;
       padding-bottom: 6px;
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
     p {
       margin: 0;
       font-size: 1.1rem;
       line-height: 1.6;
       color: #444;
+      transition: color 0.3s ease;
     }
     .contact-info {
       display: flex;
@@ -87,10 +98,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      transition: color 0.3s ease;
     }
     .contact-item span {
       font-weight: 600;
       color: #0055aa;
+      transition: color 0.3s ease;
     }
     /* Make links stand out and clickable */
     .contact-link {
@@ -98,6 +111,7 @@
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
+      transition: color 0.3s ease;
     }
     .contact-link:hover {
       text-decoration: underline;
@@ -112,7 +126,7 @@
     .back-link {
       position: fixed;
       top: 20px;
-      right: 30px;
+      right: 80px; /* leave space for toggle button */
       font-weight: 700;
       font-size: 1.1rem;
       color: #0077cc;
@@ -127,36 +141,35 @@
       background-color: #0077cc;
       color: white;
     }
+
+    /* Dark mode toggle button */
+    #dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #e2e8f0; /* Tailwind's gray-200 */
+      color: #1a202c; /* Tailwind's gray-800 */
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 110;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    #dark-mode-toggle:hover {
+      background-color: #cbd5e1; /* Tailwind's gray-300 */
+    }
+
   </style>
-  <!-- Tailwind CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-<!-- Your custom dark mode CSS -->
-<link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
 
   <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
-<button id="dark-mode-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow">
-  Toggle Dark Mode
-</button>
 
-<script>
-  const toggleButton = document.getElementById('dark-mode-toggle');
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    // Optional: Save preference in localStorage
-    if (document.body.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
+  <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">Dark Mode</button>
 
-  // On page load, set theme from localStorage if available
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-  }
-</script>
   <div class="container" role="main" aria-labelledby="pageTitle">
     <div class="photo" tabindex="0" aria-label="Contact Illustration">
       <img src="contact.png" alt="Contact Image" />
@@ -197,23 +210,46 @@
     </div>
   </div>
 
-<script>
-  const phoneLink = document.getElementById('phone-link');
-  const copyMessage = document.getElementById('copyMessage');
+  <script>
+    // Dark mode toggle button functionality
+    const toggleButton = document.getElementById('dark-mode-toggle');
 
-  phoneLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    const phoneNumber = '+44 07585685622';
-    navigator.clipboard.writeText(phoneNumber).then(() => {
-      copyMessage.style.display = 'block';
-      setTimeout(() => {
-        copyMessage.style.display = 'none';
-      }, 2000);
-    }).catch(() => {
-      alert('Failed to copy phone number. Please copy manually.');
+    // On page load: check localStorage for saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      toggleButton.textContent = 'Light Mode';
+    } else {
+      toggleButton.textContent = 'Dark Mode';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        toggleButton.textContent = 'Light Mode';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggleButton.textContent = 'Dark Mode';
+      }
     });
-  });
-</script>
+
+    // Phone number copy logic
+    const phoneLink = document.getElementById('phone-link');
+    const copyMessage = document.getElementById('copyMessage');
+
+    phoneLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      const phoneNumber = '+44 07585685622';
+      navigator.clipboard.writeText(phoneNumber).then(() => {
+        copyMessage.style.display = 'block';
+        setTimeout(() => {
+          copyMessage.style.display = 'none';
+        }, 2000);
+      }).catch(() => {
+        alert('Failed to copy phone number. Please copy manually.');
+      });
+    });
+  </script>
 
 </body>
 </html>
