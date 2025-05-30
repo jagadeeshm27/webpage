@@ -110,7 +110,27 @@
 <body>
 
   <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
+<button id="dark-mode-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow">
+  Toggle Dark Mode
+</button>
 
+<script>
+  const toggleButton = document.getElementById('dark-mode-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    // Optional: Save preference in localStorage
+    if (document.body.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // On page load, set theme from localStorage if available
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+  }
+</script>
   <div class="container" role="main" aria-labelledby="pageTitle">
     <div class="photo" tabindex="0" aria-label="Hobbies Image">
       <img src="hobbies.png" alt="Hobbies Photo" />
