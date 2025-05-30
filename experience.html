@@ -10,100 +10,74 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
       color: #222;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
       padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
     }
 
     .container {
       background: white;
       border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
       max-width: 900px;
       width: 100%;
       display: flex;
       gap: 40px;
       padding: 30px 40px;
+      align-items: flex-start;
       animation: fadeIn 1s ease forwards;
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
-    .photo {
+    .image-side {
       flex: 1;
-      max-width: 280px;
+      max-width: 300px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    .photo img {
+    .image-side img {
       width: 100%;
       display: block;
       height: auto;
     }
 
-    .photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .info {
+    .content-side {
       flex: 2;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 25px;
     }
 
     h1 {
-      margin: 0 0 8px 0;
-      font-weight: 700;
-      font-size: 2.6rem;
-      color: #0077cc;
-      letter-spacing: 1.2px;
-    }
-
-    h2 {
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: #004a99;
-      border-bottom: 2px solid #0077cc;
-      padding-bottom: 6px;
-    }
-
-    .experience-item {
-      margin-bottom: 20px;
-    }
-
-    .experience-item h3 {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 2.4rem;
+      font-weight: 700;
       color: #0077cc;
     }
 
-    .experience-item span {
-      font-size: 0.95rem;
-      color: #666;
+    .job-title {
+      font-weight: bold;
+      color: #333;
     }
 
-    .experience-item p {
-      margin-top: 8px;
+    .job-details {
+      margin: 0;
       font-size: 1.05rem;
+      line-height: 1.6;
       color: #444;
+    }
+
+    .job-entry {
+      border-top: 1px solid #eee;
+      padding-top: 15px;
     }
 
     .back-link {
@@ -129,35 +103,50 @@
 </head>
 <body>
 
-  <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
+<a href="index.html" class="back-link">← Home</a>
 
-  <div class="container" role="main" aria-labelledby="pageTitle">
-    <div class="photo" tabindex="0" aria-label="Experience Image">
-      <img src="experience.png" alt="Work Experience Image" />
-    </div>
-    <div class="info">
-      <h1 id="pageTitle">Professional Experience</h1>
-
-      <div class="experience-item">
-        <h3>Web Developer Intern – XYZ Agency</h3>
-        <span>Jan 2023 – Jun 2023 | Remote</span>
-        <p>Worked on modern front-end frameworks to build dynamic landing pages and business websites. Collaborated with the design team to optimize UI/UX and responsive behavior across browsers.</p>
-      </div>
-
-      <div class="experience-item">
-        <h3>Digital Marketing Executive – Freelance</h3>
-        <span>2021 – 2022</span>
-        <p>Handled SEO, content strategy, and social media for small businesses. Delivered successful campaigns using analytics tools and improved search engine visibility.</p>
-      </div>
-
-      <div class="experience-item">
-        <h3>Tech Head – Cybersecurity Club, St Ann's College</h3>
-        <span>2019 – 2021</span>
-        <p>Organized workshops and sessions on ethical hacking and cybersecurity awareness. Led a team of students and collaborated with faculty and external trainers.</p>
-      </div>
-
-    </div>
+<div class="container" role="main" aria-labelledby="experienceTitle">
+  <div class="image-side" tabindex="0" aria-label="Experience Image">
+    <img src="experience.png" alt="Experience Illustration" />
   </div>
+  <div class="content-side">
+    <h1 id="experienceTitle">My Experience</h1>
+
+    <div class="job-entry">
+      <p class="job-title">Front-End Developer Intern | Scape Tree | July 2022 - December 2022 | Bangalore, India</p>
+      <p class="job-details">
+        Worked on developing and maintaining front-end of the company website using HTML, CSS, and JavaScript.  
+        Ensured responsive design and integrated external APIs. Participated in UI design reviews and implemented enhancements.
+      </p>
+    </div>
+
+    <div class="job-entry">
+      <p class="job-title">Co-Founder | Ex-Money | 2020 - 2021 | India</p>
+      <p class="job-details">
+        Launched a mobile microloan startup, scaling to over 250,000 app downloads.  
+        Led marketing via Google Ads and organic channels. Managed SEO, product roadmap, design, and customer support.  
+        The company eventually shut down due to external constraints.
+      </p>
+    </div>
+
+    <div class="job-entry">
+      <p class="job-title">Regional Movie Blog & Influencer Collaboration | Freelance | 2021 - Present</p>
+      <p class="job-details">
+        Built a blog dedicated to regional cinema. Managed influencer social media pages and content partnerships.  
+        Created publishing schedules, handled SEO basics, and secured sponsored content deals.
+      </p>
+    </div>
+
+    <div class="job-entry">
+      <p class="job-title">Student Leadership Roles | St. Ann’s College of Engineering</p>
+      <p class="job-details">
+        Headed the Cybersecurity Group and the Cultural Events Branch.  
+        Organized major events and was awarded Best Event Manager for outstanding coordination and leadership.
+      </p>
+    </div>
+
+  </div>
+</div>
 
 </body>
 </html>
