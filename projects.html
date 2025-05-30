@@ -16,6 +16,7 @@
       min-height: 100vh;
       padding: 40px 20px;
     }
+
     .container {
       background: white;
       border-radius: 16px;
@@ -28,49 +29,82 @@
       padding: 30px 40px;
       animation: fadeIn 1s ease forwards;
     }
+
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
+
     h1 {
       margin: 0;
       font-weight: 700;
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       color: #0077cc;
       letter-spacing: 1.2px;
     }
+
     .project {
-      background: #f0f8ff;
-      border: 2px solid #cce6ff;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border-top: 2px solid #d2ebff;
+      padding-top: 20px;
+    }
+
+    .project-content {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-image {
+      flex: 1;
+      min-width: 220px;
+      max-width: 280px;
+    }
+
+    .project-image img {
+      width: 100%;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .project h2 {
-      margin-top: 0;
+
+    .project-info {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .project-info h2 {
       color: #004a99;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
     }
-    .project p {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 16px;
+
+    .project-info p {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 12px;
     }
+
     .buttons {
       display: flex;
-      gap: 15px;
+      gap: 12px;
     }
+
     .buttons a {
       text-decoration: none;
-      background: #0077cc;
+      background-color: #0077cc;
       color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
+      padding: 8px 16px;
+      border-radius: 24px;
       font-weight: 600;
       transition: background-color 0.3s ease;
     }
+
     .buttons a:hover {
       background-color: #005fa3;
     }
+
     .back-link {
       position: fixed;
       top: 20px;
@@ -85,6 +119,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       z-index: 100;
     }
+
     .back-link:hover {
       background-color: #0077cc;
       color: white;
@@ -95,33 +130,24 @@
 
   <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
 
-  <div class="container">
-    <h1>Projects</h1>
+  <div class="container" role="main" aria-labelledby="pageTitle">
+    <h1 id="pageTitle">Projects</h1>
 
     <div class="project">
-      <h2>Shortest Path Finder</h2>
-      <p>
-        This project is focused on implementing algorithms to find the shortest path in a weighted graph.
-        It features an interactive interface and visual explanation using algorithms like Dijkstra’s and A*.
-        Designed to help learners and developers understand and apply graph theory.
-      </p>
-      <div class="buttons">
-        <a href="shortestpath.pdf" target="_blank">View PDF</a>
-        <a href="shortestpath.pdf" download>Download PDF</a>
+      <div class="project-content">
+        <div class="project-image">
+          <img src="shortestpath.png" alt="Shortest Path Project Image" />
+        </div>
+        <div class="project-info">
+          <h2>Shortest Path Finder</h2>
+          <p>This project implements classic pathfinding algorithms like Dijkstra’s and A* to find the shortest route in a graph-based system. It includes an interactive UI for visualization and analysis.</p>
+          <div class="buttons">
+            <a href="shortestpath.pdf" target="_blank">View PDF</a>
+            <a href="shortestpath.pdf" download>Download PDF</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- You can add more projects like this below -->
-    <!--
-    <div class="project">
-      <h2>Another Project Title</h2>
-      <p>Short description about what the project does and why it's cool.</p>
-      <div class="buttons">
-        <a href="yourfile.pdf" target="_blank">View PDF</a>
-        <a href="yourfile.pdf" download>Download PDF</a>
-      </div>
-    </div>
-    -->
 
   </div>
 
