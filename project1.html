@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phanumantu YT</title>
+  <title>Phanumantu Project | Jagadheesh Muthamsetty</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,32 +16,32 @@
       margin-right: auto;
       position: relative;
       min-height: 100vh;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Home button on top right */
-    .back-link {
+    /* Top right button container */
+    .top-right {
       position: fixed;
       top: 20px;
-      right: 100px; /* moved left to avoid overlap with dark mode toggle */
+      right: 20px;
+      z-index: 100;
+    }
+    .top-right a {
+      display: inline-block;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: #0077cc;
       text-decoration: none;
-      border: 2px solid #0077cc;
-      padding: 8px 15px;
+      color: #232f3e;
+      border: 2px solid #232f3e;
+      padding: 8px 20px;
       border-radius: 30px;
       background: white;
       transition: background-color 0.3s ease, color 0.3s ease;
-      z-index: 100;
+      font-size: 1rem;
       user-select: none;
       cursor: pointer;
     }
-    .back-link:hover,
-    .back-link:focus {
-      background-color: #0077cc;
+    .top-right a:hover {
+      background-color: #232f3e;
       color: white;
-      outline: none;
     }
 
     h1 {
@@ -69,7 +69,6 @@
       padding: 25px 30px;
       margin-bottom: 30px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     section h2 {
@@ -93,135 +92,45 @@
       color: #232f3e;
       line-height: 1.5;
     }
-
-    /* Dark mode overrides */
-    body.dark {
-      background: #1a1a2e;
-      color: #e0e0e0;
-    }
-    body.dark section {
-      background: #16213e;
-      color: #e0e0e0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-    }
-    body.dark h1,
-    body.dark .role-name,
-    body.dark section h2,
-    body.dark p {
-      color: #e0e0e0;
-    }
-    body.dark .back-link {
-      background: transparent;
-      border-color: #66aaff;
-      color: #66aaff;
-    }
-    body.dark .back-link:hover,
-    body.dark .back-link:focus {
-      background-color: #66aaff;
-      color: #1a1a2e;
-    }
-    body.dark #dark-mode-toggle {
-      background-color: #2f3e5e;
-      color: #e0e0e0;
-    }
-    body.dark #dark-mode-toggle:hover,
-    body.dark #dark-mode-toggle:focus {
-      background-color: #66aaff;
-      color: #1a1a2e;
-      outline: none;
-    }
-
-    /* Dark mode toggle button styles */
-    #dark-mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 101;
-      padding: 8px 14px;
-      font-weight: 600;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      user-select: none;
-      background-color: #e2e8f0;
-      color: #232f3e;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    #dark-mode-toggle:hover,
-    #dark-mode-toggle:focus {
-      background-color: #0077cc;
-      color: white;
-      outline: none;
-    }
   </style>
-
-  <!-- Tailwind CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- Your custom dark mode CSS -->
-  <link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
 
-  <a href="index.html" aria-label="Back to Portfolio" class="back-link" tabindex="0">Home</a>
-
-  <button id="dark-mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">
-    Toggle Dark Mode
-  </button>
+  <div class="top-right">
+    <a href="index.html" aria-label="Back to Portfolio">Home</a>
+  </div>
 
   <h1>
     <img src="phanumantu.png" alt="Phanumantu YouTube Channel Logo" />
-    Creative Work 1
+    Phanumantu YouTube Channel
   </h1>
 
-  <main>
-    <section aria-labelledby="summary">
-      <h2 id="summary">Project Summary</h2>
-      <p>
-        For over 2 years, I worked closely with the Phanumantu YouTube channel as both a Content Manager and Video Editor. 
-        I was responsible for strategizing content release schedules, editing and enhancing videos, and designing engaging thumbnails 
-        that helped grow the channel's audience and improve viewer retention.
-      </p>
-    </section>
+  <section aria-labelledby="summary">
+    <h2 id="summary">Project Summary</h2>
+    <p>
+      For over 2 years, I worked closely with the Phanumantu YouTube channel as both a Content Manager and Video Editor. 
+      I was responsible for strategizing content release schedules, editing and enhancing videos, and designing engaging thumbnails 
+      that helped grow the channel's audience and improve viewer retention.
+    </p>
+  </section>
 
-    <section aria-labelledby="editor-role">
-      <h2 id="editor-role">Video Editor Role</h2>
-      <div class="role-name">Jagadheesh Muthamsetty</div>
-      <p>
-        Edited raw footage into polished videos, added motion graphics, audio adjustments, and ensured consistent visual style across all uploads. 
-        Focused on quality and engaging storytelling to boost viewer engagement.
-      </p>
-    </section>
+  <section aria-labelledby="editor-role">
+    <h2 id="editor-role">Video Editor Role</h2>
+    <div class="role-name">Jagadheesh Muthamsetty</div>
+    <p>
+      Edited raw footage into polished videos, added motion graphics, audio adjustments, and ensured consistent visual style across all uploads. 
+      Focused on quality and engaging storytelling to boost viewer engagement.
+    </p>
+  </section>
 
-    <section aria-labelledby="content-manager-role">
-      <h2 id="content-manager-role">Content Manager Role</h2>
-      <div class="role-name">Jagadheesh Muthamsetty</div>
-      <p>
-        Planned and managed content schedules, optimized video titles and descriptions for search, monitored audience engagement and feedback, 
-        and coordinated with collaborators to maintain consistent growth.
-      </p>
-    </section>
-  </main>
-
-  <script>
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-
-      const isDark = document.body.classList.contains('dark');
-      toggleButton.setAttribute('aria-pressed', isDark);
-
-      // Save preference in localStorage
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-    // On page load, set theme from localStorage if available
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      toggleButton.setAttribute('aria-pressed', 'true');
-    }
-  </script>
+  <section aria-labelledby="content-manager-role">
+    <h2 id="content-manager-role">Content Manager Role</h2>
+    <div class="role-name">Jagadheesh Muthamsetty</div>
+    <p>
+      Planned and managed content schedules, optimized video titles and descriptions for search, monitored audience engagement and feedback, 
+      and coordinated with collaborators to maintain consistent growth.
+    </p>
+  </section>
 
 </body>
 </html>
