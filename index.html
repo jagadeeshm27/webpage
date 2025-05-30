@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jagadheesh Muthamsetty | Portfolio</title>
   <style>
-       body {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #87CEFA; /* Light Sky Blue background */
       color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
     }
     header {
       background-color: #232f3e;
@@ -23,6 +28,7 @@
     header h1 {
       margin: 0;
       font-weight: 700;
+      font-size: 1.8rem;
     }
 
     /* Dropdown container */
@@ -45,7 +51,7 @@
       background-color: #232f3e;
       min-width: 160px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 100;
       border-radius: 8px;
       overflow: hidden;
     }
@@ -57,10 +63,13 @@
       font-weight: 600;
       font-size: 1rem;
     }
-    .dropdown-content a:hover {
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
       background-color: #1a2433;
+      outline: none;
     }
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
       display: block;
     }
 
@@ -68,11 +77,11 @@
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 4rem;
     }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 blocks per row */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       margin-bottom: 60px;
     }
@@ -82,7 +91,7 @@
       padding: 2rem;
       text-align: center;
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       user-select: none;
       font-weight: 700;
@@ -93,10 +102,13 @@
       align-items: center;
       justify-content: center;
       height: 220px;
+      outline-offset: 4px;
     }
-    .card:hover {
+    .card:hover,
+    .card:focus {
       transform: translateY(-8px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      outline: none;
     }
     .card img {
       width: 120px;
@@ -105,6 +117,7 @@
       margin-bottom: 1.2rem;
       pointer-events: none; /* So click works on whole card */
       user-select: none;
+      border-radius: 12px;
     }
 
     /* Creative Experience Section */
@@ -129,6 +142,24 @@
       background: white;
     }
 
+    body.dark .card,
+    body.dark .scroll-wrapper {
+      background: #1e1e1e;
+      box-shadow: 0 5px 15px rgba(255 255 255 / 0.1);
+      color: #e0e0e0;
+    }
+    body.dark header {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+    body.dark .dropdown-content {
+      background-color: #111827;
+    }
+    body.dark .dropdown-content a:hover,
+    body.dark .dropdown-content a:focus {
+      background-color: #374151;
+    }
+
     .scroll-track {
       display: flex;
       width: calc(8 * 220px);
@@ -150,8 +181,10 @@
       transition: transform 0.2s;
       user-select: none;
     }
-    .scroll-track img:hover {
+    .scroll-track img:hover,
+    .scroll-track img:focus {
       transform: scale(1.05);
+      outline: none;
     }
 
     @keyframes scroll-left {
@@ -164,12 +197,13 @@
     }
   </style>
   <!-- Tailwind CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-<!-- Your custom dark mode CSS -->
-<link href="darkmode.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Your custom dark mode CSS -->
+  <link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
-<button id="dark-mode-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow">
+
+<button id="dark-mode-toggle" aria-label="Toggle dark mode" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow">
   Toggle Dark Mode
 </button>
 
@@ -177,90 +211,97 @@
   const toggleButton = document.getElementById('dark-mode-toggle');
   toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    // Optional: Save preference in localStorage
     if (document.body.classList.contains('dark')) {
       localStorage.setItem('theme', 'dark');
     } else {
       localStorage.setItem('theme', 'light');
     }
   });
-
-  // On page load, set theme from localStorage if available
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
   }
+
+  // Make cards keyboard accessible (Enter key triggers click)
+  document.querySelectorAll('.card').forEach(card => {
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
 </script>
+
 <header>
   <h1>Jagadheesh Muthamsetty</h1>
-  <div class="dropdown">
-    <button class="dropbtn">&#8942;</button>
-    <div class="dropdown-content">
-      <a href="#personal">Personal Info</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#contact">Contact</a>
+  <nav class="dropdown" aria-label="Main menu">
+    <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-menu">&#8942;</button>
+    <div id="dropdown-menu" class="dropdown-content" role="menu" tabindex="-1">
+      <a href="#personal" role="menuitem" tabindex="0">Personal Info</a>
+      <a href="#skills" role="menuitem" tabindex="0">Skills</a>
+      <a href="#projects" role="menuitem" tabindex="0">Projects</a>
+      <a href="#experience" role="menuitem" tabindex="0">Experience</a>
+      <a href="#hobbies" role="menuitem" tabindex="0">Hobbies</a>
+      <a href="#contact" role="menuitem" tabindex="0">Contact</a>
     </div>
-  </div>
+  </nav>
 </header>
 
-<div class="container">
+<main class="container">
 
-  <div class="card-grid">
-    <section class="card" id="personal" onclick="window.location.href='personal.html'">
+  <div class="card-grid" role="list">
+    <section class="card" id="personal" role="listitem" onclick="window.location.href='personal.html'" aria-label="Go to Personal Info page">
       <img src="personal.png" alt="Personal Info" />
       <div>Personal Info</div>
     </section>
 
-    <section class="card" id="skills" onclick="window.location.href='skills.html'">
+    <section class="card" id="skills" role="listitem" onclick="window.location.href='skills.html'" aria-label="Go to Skills page">
       <img src="skills.png" alt="Skills" />
       <div>Skills</div>
     </section>
 
-    <section class="card" id="projects" onclick="window.location.href='projects.html'">
+    <section class="card" id="projects" role="listitem" onclick="window.location.href='projects.html'" aria-label="Go to Projects page">
       <img src="projects.png" alt="Projects" />
       <div>Projects</div>
     </section>
 
-    <section class="card" id="experience" onclick="window.location.href='experience.html'">
+    <section class="card" id="experience" role="listitem" onclick="window.location.href='experience.html'" aria-label="Go to Experience page">
       <img src="experience.png" alt="Experience" />
       <div>Experience</div>
     </section>
 
-    <section class="card" id="hobbies" onclick="window.location.href='hobbies.html'">
+    <section class="card" id="hobbies" role="listitem" onclick="window.location.href='hobbies.html'" aria-label="Go to Hobbies page">
       <img src="hobbies.png" alt="Hobbies" />
       <div>Hobbies</div>
     </section>
 
-    <section class="card" id="contact" onclick="window.location.href='contact.html'">
+    <section class="card" id="contact" role="listitem" onclick="window.location.href='contact.html'" aria-label="Go to Contact page">
       <img src="contact.png" alt="Contact" />
       <div>Contact</div>
     </section>
   </div>
 
   <!-- Creative Experience Scrolling -->
-  <div id="creative" class="creative-section">
+  <section id="creative" class="creative-section" aria-label="Creative Experience">
     <h2 class="creative-title">Creative Experience</h2>
-    <div class="scroll-wrapper" aria-label="Scrolling Creative Experience Images">
+    <div class="scroll-wrapper" aria-live="polite" aria-atomic="true" aria-label="Scrolling Creative Experience Images">
       <div class="scroll-track">
         <!-- 4 unique images duplicated for infinite scroll -->
         <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
-        <a href="project2.html" title="Pranay varma Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
+        <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
         <a href="project4.html" title="Creative Work 4"><img src="cw1.jpg" alt="Creative Work 4" /></a>
+
         <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
-        <a href="project1.html" title="Pranay varma Project"><img src="rjabhinav.png" alt="Pranay varma Project" /></a>
-        
-        <a href="project1.html" title="Phanumantu Project"><img src="phanumantu.png" alt="Phanumantu Project" /></a>
-        <a href="project2.html" title="Pranay varma Project"><img src="rjabhinav.png" alt="Pranay varma Project" /></a>
+        <a href="project2.html" title="RJ Abhinav Project"><img src="rjabhinav.png" alt="RJ Abhinav Project" /></a>
         <a href="project3.html" title="Creative Work 3"><img src="cw.jpg" alt="Creative Work 3" /></a>
         <a href="project4.html" title="Creative Work 4"><img src="cw1.jpg" alt="Creative Work 4" /></a>
       </div>
     </div>
-  </div>
+  </section>
 
-</div>
+</main>
 
 </body>
 </html>
