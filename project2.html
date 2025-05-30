@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pranay Varma YT</title>
+  <title>Pranay Varma YI</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,32 +16,31 @@
       margin-right: auto;
       position: relative;
       min-height: 100vh;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Home button on top right */
-    .back-link {
+    .top-right {
       position: fixed;
       top: 20px;
-      right: 100px; /* Moved left to avoid overlap with toggle button */
+      right: 20px;
+      z-index: 100;
+    }
+    .top-right a {
+      display: inline-block;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: #0077cc;
       text-decoration: none;
-      border: 2px solid #0077cc;
-      padding: 8px 15px;
+      color: #232f3e;
+      border: 2px solid #232f3e;
+      padding: 8px 20px;
       border-radius: 30px;
       background: white;
       transition: background-color 0.3s ease, color 0.3s ease;
-      z-index: 100;
+      font-size: 1rem;
       user-select: none;
       cursor: pointer;
     }
-    .back-link:hover,
-    .back-link:focus {
-      background-color: #0077cc;
+    .top-right a:hover {
+      background-color: #232f3e;
       color: white;
-      outline: none;
     }
 
     h1 {
@@ -69,7 +68,6 @@
       padding: 25px 30px;
       margin-bottom: 30px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     section h2 {
@@ -93,121 +91,42 @@
       color: #232f3e;
       line-height: 1.5;
     }
-
-    /* Dark mode overrides */
-    body.dark {
-      background: #1a1a2e;
-      color: #e0e0e0;
-    }
-    body.dark section {
-      background: #16213e;
-      color: #e0e0e0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-    }
-    body.dark h1,
-    body.dark .role-name,
-    body.dark section h2,
-    body.dark p {
-      color: #e0e0e0;
-    }
-    body.dark .back-link {
-      background: transparent;
-      border-color: #66aaff;
-      color: #66aaff;
-    }
-    body.dark .back-link:hover,
-    body.dark .back-link:focus {
-      background-color: #66aaff;
-      color: #1a1a2e;
-    }
-
-    /* Dark mode toggle button styles */
-    #dark-mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 101;
-      padding: 8px 14px;
-      font-weight: 600;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      user-select: none;
-      background-color: #e2e8f0;
-      color: #232f3e;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    #dark-mode-toggle:hover,
-    #dark-mode-toggle:focus {
-      background-color: #0077cc;
-      color: white;
-      outline: none;
-    }
   </style>
-  <!-- Tailwind CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- Your custom dark mode CSS -->
-  <link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
 
-  <a href="index.html" aria-label="Back to Portfolio" class="back-link" tabindex="0">Home</a>
-
-  <button id="dark-mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">
-    Toggle Dark Mode
-  </button>
+  <div class="top-right">
+    <a href="index.html" aria-label="Back to Portfolio">Home</a>
+  </div>
 
   <h1>
     <img src="rjabhinav.png" alt="Pranay Varma (rjabhinav) Profile Image" />
     Creative Work 2
   </h1>
 
-  <main>
-    <section aria-labelledby="summary">
-      <h2 id="summary">Project Summary</h2>
-      <p>
-        I worked as the editor of thumbnails and the moderator for the entire live sessions of Pranay Varma and his brother Charan Varma on their YouTube channels.
-        My role involved designing engaging thumbnails to increase viewer clicks and managing live chat moderation to ensure smooth, respectful interaction during streams.
-      </p>
-    </section>
+  <section aria-labelledby="summary">
+    <h2 id="summary">Project Summary</h2>
+    <p>
+      I worked as the editor responsible for creating engaging thumbnail designs for pranay's YouTube content. 
+      Additionally, I served as a moderator for live sessions conducted by him and his brother, Charan Varma, ensuring smooth interaction and chat management.
+    </p>
+  </section>
 
-    <section aria-labelledby="editor-role">
-      <h2 id="editor-role">Thumbnail Editor Role</h2>
-      <div class="role-name">Jagadheesh Muthamsetty</div>
-      <p>
-        Created visually appealing thumbnails tailored to maximize audience engagement and click-through rates.
-      </p>
-    </section>
+  <section aria-labelledby="editor-role">
+    <h2 id="editor-role">Thumbnail Editor</h2>
+    <div class="role-name">Jagadheesh Muthamsetty</div>
+    <p>
+      Designed and optimized thumbnails to maximize click-through rates, maintaining visual consistency and appealing aesthetics aligned with the brand.
+    </p>
+  </section>
 
-    <section aria-labelledby="moderator-role">
-      <h2 id="moderator-role">Moderator Role</h2>
-      <div class="role-name">Jagadheesh Muthamsetty</div>
-      <p>
-        Moderated live sessions for Pranay and Charan Varma, managing chat interactions, maintaining a positive community environment, and ensuring smooth live streaming experiences.
-      </p>
-    </section>
-  </main>
-
-  <script>
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-
-      const isDark = document.body.classList.contains('dark');
-      toggleButton.setAttribute('aria-pressed', isDark);
-
-      // Save preference in localStorage
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-    // On page load, set theme from localStorage if available
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      toggleButton.setAttribute('aria-pressed', 'true');
-    }
-  </script>
+  <section aria-labelledby="moderator-role">
+    <h2 id="moderator-role">Live Session Moderator</h2>
+    <div class="role-name">Jagadheesh Muthamsetty</div>
+    <p>
+      Managed live chats during YouTube live streams for Pranay Varma and Charan Varma, ensuring respectful and engaging interactions, moderating comments, and assisting in technical flow.
+    </p>
+  </section>
 
 </body>
 </html>
