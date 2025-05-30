@@ -15,7 +15,6 @@
       flex-direction: column;
       align-items: center;
       gap: 60px;
-      min-height: 100vh;
     }
 
     .container {
@@ -29,7 +28,6 @@
       padding: 30px 40px;
       align-items: flex-start;
       animation: fadeIn 1s ease forwards;
-      flex-wrap: wrap;
     }
 
     @keyframes fadeIn {
@@ -38,12 +36,11 @@
     }
 
     .image-side {
-      flex: 1 1 280px;
+      flex: 1;
       max-width: 300px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      outline-offset: 4px;
     }
 
     .image-side img {
@@ -53,7 +50,7 @@
     }
 
     .content-side {
-      flex: 2 1 550px;
+      flex: 2;
       display: flex;
       flex-direction: column;
       gap: 25px;
@@ -64,24 +61,11 @@
       font-size: 2.4rem;
       font-weight: 700;
       color: #0077cc;
-      letter-spacing: 1px;
-    }
-
-    .job-entry {
-      border-top: 1px solid #eee;
-      padding-top: 15px;
-    }
-
-    .job-entry:first-of-type {
-      border-top: none;
-      padding-top: 0;
     }
 
     .job-title {
-      font-weight: 700;
-      color: #003d80;
-      font-size: 1.15rem;
-      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
     }
 
     .job-details {
@@ -89,7 +73,11 @@
       font-size: 1.05rem;
       line-height: 1.6;
       color: #444;
-      white-space: pre-line;
+    }
+
+    .job-entry {
+      border-top: 1px solid #eee;
+      padding-top: 15px;
     }
 
     .back-link {
@@ -107,145 +95,58 @@
       z-index: 100;
     }
 
-    .back-link:hover,
-    .back-link:focus-visible {
+    .back-link:hover {
       background-color: #0077cc;
-      color: white;
-      outline: none;
-    }
-
-    /* Dark mode styles */
-    body.dark {
-      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-      color: #ddd;
-    }
-
-    body.dark .container {
-      background: #1f2937;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    }
-
-    body.dark h1,
-    body.dark .job-title {
-      color: #60a5fa;
-    }
-
-    body.dark .job-details {
-      color: #cbd5e1;
-    }
-
-    body.dark .back-link {
-      color: #60a5fa;
-      border-color: #60a5fa;
-    }
-
-    body.dark .back-link:hover,
-    body.dark .back-link:focus-visible {
-      background-color: #60a5fa;
-      color: #1e293b;
-    }
-
-    /* Dark mode toggle button */
-    #dark-mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 120px;
-      z-index: 101;
-      background-color: #e2e8f0;
-      color: #1e293b;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    body.dark #dark-mode-toggle {
-      background-color: #475569;
-      color: #f1f5f9;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-
-    #dark-mode-toggle:hover,
-    #dark-mode-toggle:focus-visible {
-      outline: none;
-      background-color: #3b82f6;
       color: white;
     }
   </style>
-  <!-- Tailwind CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- Your custom dark mode CSS -->
-  <link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
 
-  <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
-  <button id="dark-mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">
-    Toggle Dark Mode
-  </button>
+<a href="index.html" class="back-link">← Home</a>
 
-  <script>
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      toggleButton.setAttribute('aria-pressed', isDark);
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+<div class="container" role="main" aria-labelledby="experienceTitle">
+  <div class="image-side" tabindex="0" aria-label="Experience Image">
+    <img src="experience.png" alt="Experience Illustration" />
+  </div>
+  <div class="content-side">
+    <h1 id="experienceTitle">My Experience</h1>
 
-    // On page load, set theme from localStorage if available
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      toggleButton.setAttribute('aria-pressed', true);
-    }
-  </script>
+    <div class="job-entry">
+      <p class="job-title">Front-End Developer Intern | Scape Tree | July 2022 - December 2022 | Bangalore, India</p>
+      <p class="job-details">
+        Worked on developing and maintaining front-end of the company website using HTML, CSS, and JavaScript.  
+        Ensured responsive design and integrated external APIs. Participated in UI design reviews and implemented enhancements.
+      </p>
+    </div>
 
-  <main class="container" role="main" aria-labelledby="experienceTitle">
-    <aside class="image-side" tabindex="0" aria-label="Experience Illustration">
-      <img src="experience.png" alt="Illustration representing experience" />
-    </aside>
+    <div class="job-entry">
+      <p class="job-title">Co-Founder | Ex-Money | 2020 - 2021 | India</p>
+      <p class="job-details">
+        Launched a mobile microloan startup, scaling to over 250,000 app downloads.  
+        Led marketing via Google Ads and organic channels. Managed SEO, product roadmap, design, and customer support.  
+        The company eventually shut down due to external constraints.
+      </p>
+    </div>
 
-    <section class="content-side">
-      <h1 id="experienceTitle">My Experience</h1>
+    <div class="job-entry">
+      <p class="job-title">Regional Movie Blog & Influencer Collaboration | Freelance | 2021 - Present</p>
+      <p class="job-details">
+        Built a blog dedicated to regional cinema. Managed influencer social media pages and content partnerships.  
+        Created publishing schedules, handled SEO basics, and secured sponsored content deals.
+      </p>
+    </div>
 
-      <article class="job-entry" aria-label="Front-End Developer Intern at Scape Tree">
-        <p class="job-title">Front-End Developer Intern | Scape Tree | July 2022 - December 2022 | Bangalore, India</p>
-        <p class="job-details">
-          Worked on developing and maintaining front-end of the company website using HTML, CSS, and JavaScript.
-          Ensured responsive design and integrated external APIs. Participated in UI design reviews and implemented enhancements.
-        </p>
-      </article>
+    <div class="job-entry">
+      <p class="job-title">Student Leadership Roles | St. Ann’s College of Engineering</p>
+      <p class="job-details">
+        Headed the Cybersecurity Group and the Cultural Events Branch.  
+        Organized major events and was awarded Best Event Manager for outstanding coordination and leadership.
+      </p>
+    </div>
 
-      <article class="job-entry" aria-label="Co-Founder at Ex-Money">
-        <p class="job-title">Co-Founder | Ex-Money | 2020 - 2021 | India</p>
-        <p class="job-details">
-          Launched a mobile microloan startup, scaling to over 250,000 app downloads.
-          Led marketing via Google Ads and organic channels. Managed SEO, product roadmap, design, and customer support.
-          The company eventually shut down due to external constraints.
-        </p>
-      </article>
-
-      <article class="job-entry" aria-label="Regional Movie Blog and Influencer Collaboration">
-        <p class="job-title">Regional Movie Blog & Influencer Collaboration | Freelance | 2021 - Present</p>
-        <p class="job-details">
-          Built a blog dedicated to regional cinema. Managed influencer social media pages and content partnerships.
-          Created publishing schedules, handled SEO basics, and secured sponsored content deals.
-        </p>
-      </article>
-
-      <article class="job-entry" aria-label="Student Leadership Roles at St. Ann’s College of Engineering">
-        <p class="job-title">Student Leadership Roles | St. Ann’s College of Engineering</p>
-        <p class="job-details">
-          Headed the Cybersecurity Group and the Cultural Events Branch.
-          Organized major events and was awarded Best Event Manager for outstanding coordination and leadership.
-        </p>
-      </article>
-
-    </section>
-  </main>
+  </div>
+</div>
 
 </body>
 </html>
