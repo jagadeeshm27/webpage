@@ -4,60 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jagadheesh Muthamsetty | Projects</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="darkmode.css" rel="stylesheet" />
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
       color: #222;
       min-height: 100vh;
       padding: 40px 20px;
-    }
-
-    .container {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      max-width: 900px;
-      width: 100%;
-      margin: 0 auto 50px;
-      padding: 30px 40px;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .project-block {
       display: flex;
       flex-direction: column;
+      gap: 50px;
+      justify-content: flex-start;
+      align-items: center; /* Center all containers horizontally */
+    }
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+      animation: fadeIn 1s ease forwards;
+      margin-left: auto;  /* horizontal centering */
+      margin-right: auto; /* horizontal centering */
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .image-side {
+      flex: 1;
+      max-width: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .image-side img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .image-side:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .content-side {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+    h1, h2 {
+      margin: 0 0 15px 0;
+      font-weight: 700;
+      color: #0077cc;
+      letter-spacing: 1.2px;
+    }
+    h1 {
+      font-size: 2.6rem;
+    }
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 8px;
+      margin-top: 40px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    .project-block {
+      display: flex;
       gap: 30px;
+      align-items: flex-start;
       border-top: 1px solid #ddd;
       padding-top: 30px;
     }
-
-    @media(min-width: 768px) {
-      .project-block {
-        flex-direction: row;
-      }
+    .project-image {
+      flex: 1;
+      max-width: 250px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
-
     .project-image img {
       width: 100%;
       height: auto;
-      border-radius: 1rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: block;
     }
-
+    .project-details {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
     .btn {
       padding: 10px 20px;
       font-weight: 600;
@@ -66,15 +117,15 @@
       background: #e6f0fa;
       border: 2px solid #0077cc;
       border-radius: 30px;
+      cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s, color 0.3s;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-
     .btn:hover {
       background-color: #0077cc;
       color: white;
     }
-
     .back-link {
       position: fixed;
       top: 20px;
@@ -82,100 +133,56 @@
       font-weight: 700;
       font-size: 1.1rem;
       color: #0077cc;
+      text-decoration: none;
       border: 2px solid #0077cc;
       padding: 8px 15px;
       border-radius: 30px;
-      background: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
       z-index: 100;
-      transition: background-color 0.3s, color 0.3s;
     }
-
     .back-link:hover {
       background-color: #0077cc;
       color: white;
     }
-
-    h1, h2 {
-      color: #0077cc;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 15px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #0077cc;
-      padding-bottom: 8px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #444;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
-    }
   </style>
 </head>
-<body class="transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-white">
+<body>
 
   <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
 
-  <button id="dark-mode-toggle"
-    class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow z-50">
-    Toggle Dark Mode
-  </button>
-
-  <script>
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    });
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-  </script>
-
-  <!-- Intro Section -->
+  <!-- Intro Container -->
   <div class="container" role="main" aria-labelledby="pageTitle">
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      <div class="w-full md:w-1/3">
-        <img src="projects.png" alt="Projects Overview Image" class="rounded-xl shadow" />
-      </div>
-      <div class="w-full md:w-2/3">
-        <h1 id="pageTitle">My Projects</h1>
-        <p>These are some of the projects I have worked on during my Masters at the University of Liverpool and my Bachelor's degree in India.</p>
-        <p>I cherish these projects for the challenges they presented and the skills I developed through them.  
-          As I continue to grow as a developer, these experiences remind me of the power of dedication and creativity.</p>
-      </div>
+    <div class="image-side" tabindex="0" aria-label="Projects Image">
+      <img src="projects.png" alt="Projects Overview Image" />
+    </div>
+    <div class="content-side">
+      <h1 id="pageTitle">My Projects</h1>
+      <p>
+        These are some of the projects I have worked on during my Masters at the University of Liverpool and my Bachelor's degree in India.  
+        Each project holds a special place in my journey, representing my growth and passion for technology.
+      </p>
+      <p>
+        I cherish these projects for the challenges they presented and the skills I developed through them.  
+        As I continue to grow as a developer, these experiences remind me of the power of dedication and creativity.
+      </p>
     </div>
   </div>
 
-  <!-- Project 1 Section -->
-  <section class="container" aria-labelledby="project1Title">
+  <!-- Project 1 Block -->
+  <section class="container" aria-labelledby="project1Title" tabindex="0">
     <h2 id="project1Title">Shortest Path Algorithm</h2>
     <div class="project-block">
-      <div class="project-image">
-        <img src="shortestpath_project_image.png" alt="Visualization of Shortest Path Algorithm" />
+      <div class="project-image" aria-label="Shortest Path Project Image">
+        <img src="shortestpath_project_image.png" alt="Shortest Path Project" />
       </div>
       <div class="project-details">
-        <p>This project implements a robust shortest path algorithm to find the quickest route between nodes in a weighted graph.
-          It is designed to optimize route planning and can be applied to GPS navigation, network routing, and logistics.</p>
+        <p>
+          This project implements a robust shortest path algorithm to find the quickest route between nodes in a weighted graph.  
+          It is designed to optimize route planning and can be applied to GPS navigation, network routing, and logistics.
+        </p>
         <div class="buttons">
-          <a href="shortestpath.pdf" target="_blank" rel="noopener" class="btn">View PDF</a>
-          <a href="shortestpath.pdf" download class="btn">Download PDF</a>
+          <a href="shortestpath.pdf" target="_blank" rel="noopener" class="btn" aria-label="View Shortest Path Project PDF">View PDF</a>
+          <a href="shortestpath.pdf" download class="btn" aria-label="Download Shortest Path Project PDF">Download PDF</a>
         </div>
       </div>
     </div>
