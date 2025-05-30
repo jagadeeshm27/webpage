@@ -23,7 +23,8 @@
       max-width: 900px;
       width: 100%;
       display: flex;
-      gap: 40px;
+      flex-direction: column;
+      gap: 30px;
       padding: 30px 40px;
       animation: fadeIn 1s ease forwards;
     }
@@ -31,57 +32,44 @@
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
-    .photo {
-      flex: 1;
-      max-width: 280px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .photo img {
-      width: 100%;
-      display: block;
-      height: auto;
-    }
-    .photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-    .info {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 30px;
-    }
     h1 {
-      margin: 0 0 8px 0;
+      margin: 0;
       font-weight: 700;
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       color: #0077cc;
       letter-spacing: 1.2px;
     }
-    h2 {
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: #004a99;
-      border-bottom: 2px solid #0077cc;
-      padding-bottom: 6px;
-    }
-    p {
-      font-size: 1.1rem;
-      color: #444;
-      line-height: 1.6;
-    }
-    .placeholder {
-      background-color: #f0f8ff;
-      padding: 20px;
+    .project {
+      background: #f0f8ff;
+      border: 2px solid #cce6ff;
       border-radius: 12px;
-      border-left: 6px solid #0077cc;
-      font-style: italic;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .project h2 {
+      margin-top: 0;
+      color: #004a99;
+    }
+    .project p {
+      font-size: 1.1rem;
       color: #333;
+      margin-bottom: 16px;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+    .buttons a {
+      text-decoration: none;
+      background: #0077cc;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .buttons a:hover {
+      background-color: #005fa3;
     }
     .back-link {
       position: fixed;
@@ -107,20 +95,34 @@
 
   <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
 
-  <div class="container" role="main" aria-labelledby="pageTitle">
-    <div class="photo" tabindex="0" aria-label="Project showcase image">
-      <img src="projects.png" alt="Projects Illustration" />
+  <div class="container">
+    <h1>Projects</h1>
+
+    <div class="project">
+      <h2>Shortest Path Finder</h2>
+      <p>
+        This project is focused on implementing algorithms to find the shortest path in a weighted graph.
+        It features an interactive interface and visual explanation using algorithms like Dijkstra’s and A*.
+        Designed to help learners and developers understand and apply graph theory.
+      </p>
+      <div class="buttons">
+        <a href="shortestpath.pdf" target="_blank">View PDF</a>
+        <a href="shortestpath.pdf" download>Download PDF</a>
+      </div>
     </div>
-    <div class="info">
-      <h1 id="pageTitle">Projects</h1>
-      <section aria-labelledby="projectsHeading">
-        <h2 id="projectsHeading">My Work</h2>
-        <div class="placeholder">
-          🚧 Project details coming soon...  
-          <br />You can showcase your portfolio, code repositories, and innovations here.
-        </div>
-      </section>
+
+    <!-- You can add more projects like this below -->
+    <!--
+    <div class="project">
+      <h2>Another Project Title</h2>
+      <p>Short description about what the project does and why it's cool.</p>
+      <div class="buttons">
+        <a href="yourfile.pdf" target="_blank">View PDF</a>
+        <a href="yourfile.pdf" download>Download PDF</a>
+      </div>
     </div>
+    -->
+
   </div>
 
 </body>
