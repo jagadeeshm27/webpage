@@ -4,93 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jagadheesh Muthamsetty | Skills</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="darkmode.css" rel="stylesheet" />
   <style>
-        body {
-      margin: 0;
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #a0cfff 0%, #e0f7ff 100%);
       color: #222;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
       padding: 40px 20px;
+      min-height: 100vh;
     }
     .container {
       background: white;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.12);
       max-width: 900px;
-      width: 100%;
+      margin: auto;
       display: flex;
+      flex-wrap: wrap;
       gap: 40px;
       padding: 30px 40px;
       animation: fadeIn 1s ease forwards;
     }
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .photo {
-      flex: 1;
-      max-width: 280px;
+      flex: 1 1 260px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
-    .photo img {
-      width: 100%;
-      display: block;
-      height: auto;
-    }
     .photo:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
     .info {
-      flex: 2;
+      flex: 2 1 500px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 30px;
     }
     h1 {
-      margin: 0 0 8px 0;
-      font-weight: 700;
       font-size: 2.6rem;
       color: #0077cc;
+      font-weight: 700;
       letter-spacing: 1.2px;
+      margin-bottom: 0;
     }
     h2 {
-      margin-bottom: 12px;
-      font-weight: 600;
+      font-size: 1.8rem;
       color: #004a99;
       border-bottom: 2px solid #0077cc;
       padding-bottom: 6px;
-    }
-    .skill {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .skill-name {
       font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 6px;
+      font-size: 1.1rem;
       color: #0050b3;
+      margin-bottom: 4px;
     }
     .progress-bar {
       background-color: #e6f0fa;
+      height: 20px;
       border-radius: 15px;
       overflow: hidden;
-      height: 20px;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
     }
     .progress {
-      height: 100%;
       background-color: #0077cc;
+      height: 100%;
       border-radius: 15px 0 0 15px;
-      width: 0;
       transition: width 1s ease-in-out;
     }
     .back-link {
@@ -112,105 +99,97 @@
       color: white;
     }
   </style>
-  <!-- Tailwind CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-<!-- Your custom dark mode CSS -->
-<link href="darkmode.css" rel="stylesheet" />
 </head>
 <body>
 
-  <a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
-<button id="dark-mode-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow">
+<a href="index.html" class="back-link" aria-label="Back to Home">← Home</a>
+
+<!-- Dark Mode Toggle -->
+<button id="dark-mode-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded shadow transition duration-300">
   Toggle Dark Mode
 </button>
 
-<script>
-  const toggleButton = document.getElementById('dark-mode-toggle');
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    // Optional: Save preference in localStorage
-    if (document.body.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // On page load, set theme from localStorage if available
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-  }
-</script>
-  <div class="container" role="main" aria-labelledby="pageTitle">
-    <div class="photo" tabindex="0" aria-label="Skills related image">
-      <img src="skills.png" alt="Skills Illustration" />
-    </div>
-    <div class="info">
-      <h1 id="pageTitle">My Skills</h1>
-      
-      <section aria-labelledby="skillsHeading">
-        <h2 id="skillsHeading">Technical Skills</h2>
-
-        <div class="skill">
-          <div class="skill-name">HTML5 & CSS3</div>
-          <div class="progress-bar" aria-label="HTML5 and CSS3 proficiency">
-            <div class="progress" style="width: 90%;"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-name">JavaScript</div>
-          <div class="progress-bar" aria-label="JavaScript proficiency">
-            <div class="progress" style="width: 85%;"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-name">React.js</div>
-          <div class="progress-bar" aria-label="React.js proficiency">
-            <div class="progress" style="width: 75%;"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-name">Node.js & Express</div>
-          <div class="progress-bar" aria-label="Node.js and Express proficiency">
-            <div class="progress" style="width: 70%;"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-name">Git & Version Control</div>
-          <div class="progress-bar" aria-label="Git and version control proficiency">
-            <div class="progress" style="width: 80%;"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-name">Cybersecurity Basics</div>
-          <div class="progress-bar" aria-label="Cybersecurity proficiency">
-            <div class="progress" style="width: 65%;"></div>
-          </div>
-        </div>
-
-      </section>
-
-    </div>
+<!-- Main Container -->
+<div class="container" role="main" aria-labelledby="pageTitle">
+  <div class="photo" tabindex="0" aria-label="Skills related image">
+    <img src="skills.png" alt="Skills Illustration" class="w-full h-auto" />
   </div>
+  <div class="info">
+    <h1 id="pageTitle">My Skills</h1>
 
-  <script>
-    // Animate progress bars on load
-    window.addEventListener('DOMContentLoaded', () => {
-      const progressBars = document.querySelectorAll('.progress');
-      progressBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 100);
-      });
+    <section aria-labelledby="skillsHeading">
+      <h2 id="skillsHeading">Technical Skills</h2>
+
+      <!-- Skill Item -->
+      <div class="skill">
+        <div class="skill-name">HTML5 & CSS3</div>
+        <div class="progress-bar" aria-label="HTML5 and CSS3 proficiency">
+          <div class="progress" data-width="90%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="progress-bar" aria-label="JavaScript proficiency">
+          <div class="progress" data-width="85%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">React.js</div>
+        <div class="progress-bar" aria-label="React.js proficiency">
+          <div class="progress" data-width="75%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Node.js & Express</div>
+        <div class="progress-bar" aria-label="Node.js and Express proficiency">
+          <div class="progress" data-width="70%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Git & Version Control</div>
+        <div class="progress-bar" aria-label="Git and version control proficiency">
+          <div class="progress" data-width="80%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Cybersecurity Basics</div>
+        <div class="progress-bar" aria-label="Cybersecurity proficiency">
+          <div class="progress" data-width="65%"></div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<script>
+  // Animate progress bars
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.progress').forEach(bar => {
+      const width = bar.getAttribute('data-width');
+      bar.style.width = '0';
+      setTimeout(() => {
+        bar.style.width = width;
+      }, 100);
     });
-  </script>
-  
+
+    // Dark mode init
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    // Toggle handler
+    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  });
+</script>
+
 </body>
 </html>
